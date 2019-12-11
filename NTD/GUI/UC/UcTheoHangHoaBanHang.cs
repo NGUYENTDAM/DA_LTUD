@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NTD.GUI.UC
 {
-    public partial class UcTheoChungTu : UserControl
+    public partial class UcTheoHangHoaBanHang : UserControl
     {
-        public UcTheoChungTu()
+        public UcTheoHangHoaBanHang()
         {
             InitializeComponent();
         }

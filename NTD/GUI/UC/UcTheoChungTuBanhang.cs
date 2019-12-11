@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NTD.GUI.UC
 {
-    public partial class UcTheoHangHoa : UserControl
+    public partial class UcTheoChungTuBanhang : UserControl
     {
-        public UcTheoHangHoa()
+        public UcTheoChungTuBanhang()
         {
             InitializeComponent();
-        }
-
-        private void UcTheoHangHoa_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

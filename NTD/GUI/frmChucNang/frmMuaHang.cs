@@ -35,7 +35,7 @@ namespace NTD.GUI
         }
         private void LoadTheoChungTu()
         {
-            UcTheoChungTu pbh = new UcTheoChungTu();
+            UcTheoChungTuMuaHang pbh = new UcTheoChungTuMuaHang();
             pbh.Dock = DockStyle.Fill;
             ucBanHang1.Controls.Clear();
             ucBanHang1.Controls.Add(pbh);
@@ -45,7 +45,7 @@ namespace NTD.GUI
         private void LoadTheoHangHoa()
         {
 
-            UcTheoHangHoa pbh = new UcTheoHangHoa();
+            UcTheoHangHoaMuaHang pbh = new UcTheoHangHoaMuaHang();
             pbh.Dock = DockStyle.Fill;
             ucBanHang1.Controls.Clear();
             ucBanHang1.Controls.Add(pbh);

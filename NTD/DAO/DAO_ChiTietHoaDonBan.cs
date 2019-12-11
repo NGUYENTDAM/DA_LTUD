@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace NTD.DAO
 {
-    public class DAO_ChiTietHoaDonNhap
+    public class DAO_ChiTietHoaDonBan
     {
         public db db = new db();
 
         public DataTable GetDataSource()
         {
             string mahd = "HD00";
-            string sql = "select hdn.MaSP, hdn.TenSP, hdn.DonVi, hdn.SoLuong, hdn.DonGia, hdn.ThanhTien, hdn.GhiChu from ChiTietHoaDonNhap hdn where hdn.MaHD = '"+ mahd+"'";
+            string sql = "select hdn.MaSP, hdn.TenSP, hdn.DonVi, hdn.SoLuong, hdn.DonGia, hdn.ThanhTien, hdn.GhiChu from ChiTietHoaDonBan hdn where hdn.MaHD = '" + mahd + "'";
             var rs = db.GetData(sql);
 
             return rs;
         }
 
-        public int ThemChiTietHoaDonNhap(ChiTietHoaDonNhap hdn)
+        public int ThemChiTietHoaDonBan(ChiTietHoaDonBan hdb)
         {
-            string sql = string.Format("insert into [ChiTietHoaDonNhap](MaHD,MaSP,TenSP,DonVi,SoLuong,DonGia,ThanhTien,GhiChu) Values('{0}', N'{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}',N'{7}')"
-                , hdn.MaHoaDon, hdn.MaSanPham, hdn.TenSanPham, hdn.DonVi, hdn.SoLuong, hdn.DonGia, hdn.ThanhTien, hdn.GhiChu);
+            string sql = string.Format("insert into [ChiTietHoaDonBan](MaHD,MaSP,TenSP,DonVi,SoLuong,DonGia,ThanhTien,GhiChu) Values('{0}', N'{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}',N'{7}')"
+                , hdb.MaHoaDon, hdb.MaSanPham, hdb.TenSanPham, hdb.DonVi, hdb.SoLuong, hdb.DonGia, hdb.ThanhTien, hdb.GhiChu);
 
             var rs = db.ExecuteSQL(sql);
 

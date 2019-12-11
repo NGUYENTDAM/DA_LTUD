@@ -104,9 +104,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ChiTietChungTuBan_BUS.cs" />
+    <Compile Include="BUS\ChiTietChungTuNhap_BUS.cs" />
+    <Compile Include="BUS\ChiTietHoaDonBan_BUS.cs" />
     <Compile Include="BUS\ChiTietHoaDonNhap_BUS.cs" />
+    <Compile Include="BUS\ChungTuBan_BUS.cs" />
+    <Compile Include="BUS\ChungTuMua_BUS.cs" />
+    <Compile Include="BUS\DieuKhoan_BUS.cs" />
     <Compile Include="BUS\DonVi_BUS.cs" />
     <Compile Include="BUS\HangHoa_BUS.cs" />
+    <Compile Include="BUS\HinhThuc_BUS.cs" />
+    <Compile Include="BUS\HoaDonBan_BUS.cs" />
+    <Compile Include="BUS\HoaDonNhap_BUS.cs" />
     <Compile Include="BUS\KhachHang_BUS.cs" />
     <Compile Include="BUS\KhoHang_BUS.cs" />
     <Compile Include="BUS\KhuVuc_BUS.cs" />
@@ -118,9 +127,17 @@
     <Compile Include="BUS\ThemNguoiDung_BUS.cs" />
     <Compile Include="BUS\TonKho_BUS.cs" />
     <Compile Include="BUS\User_BUS.cs" />
+    <Compile Include="DAO\DAO_ChiTietChungTuBan.cs" />
+    <Compile Include="DAO\DAO_ChiTietChungTuNhap.cs" />
+    <Compile Include="DAO\DAO_ChiTietHoaDonBan.cs" />
     <Compile Include="DAO\DAO_ChiTietHoaDonNhap.cs" />
+    <Compile Include="DAO\DAO_ChungTuBan.cs" />
+    <Compile Include="DAO\DAO_ChungTuMua.cs" />
+    <Compile Include="DAO\DAO_DieuKhoan.cs" />
     <Compile Include="DAO\DAO_DonVi.cs" />
     <Compile Include="DAO\DAO_HangHoa.cs" />
+    <Compile Include="DAO\DAO_HinhThuc.cs" />
+    <Compile Include="DAO\DAO_HoaDonBan.cs" />
     <Compile Include="DAO\DAO_HoaDonNhap.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="DAO\DAO_KhoHang.cs" />
@@ -134,11 +151,17 @@
     <Compile Include="DAO\DAO_NhomHang.cs" />
     <Compile Include="DAO\RoleFormDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DTO\ChiTietChungTuBan.cs" />
+    <Compile Include="DTO\ChiTietChungTuNhap.cs" />
     <Compile Include="DTO\ChiTietHoaDonBan.cs" />
     <Compile Include="DTO\ChiTietHoaDonNhap.cs" />
+    <Compile Include="DTO\ChungTuBan.cs" />
+    <Compile Include="DTO\ChungTuNhap.cs" />
+    <Compile Include="DTO\DieuKhoan.cs" />
     <Compile Include="DTO\DonVi.cs" />
     <Compile Include="DTO\Form.cs" />
     <Compile Include="DTO\HangHoa.cs" />
+    <Compile Include="DTO\HinhThuc.cs" />
     <Compile Include="DTO\HoaDonBan.cs" />
     <Compile Include="DTO\HoaDonNhap.cs" />
     <Compile Include="DTO\KhachHang.cs" />
@@ -382,17 +405,29 @@
     <Compile Include="GUI\UC\UcChuyenKho.Designer.cs">
       <DependentUpon>UcChuyenKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\UcTheoChungTu.cs">
+    <Compile Include="GUI\UC\UcTheoChungTuBanhang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\UcTheoChungTu.Designer.cs">
-      <DependentUpon>UcTheoChungTu.cs</DependentUpon>
+    <Compile Include="GUI\UC\UcTheoChungTuBanhang.Designer.cs">
+      <DependentUpon>UcTheoChungTuBanhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\UcTheoHangHoa.cs">
+    <Compile Include="GUI\UC\UcTheoChungTuMuaHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\UcTheoHangHoa.Designer.cs">
-      <DependentUpon>UcTheoHangHoa.cs</DependentUpon>
+    <Compile Include="GUI\UC\UcTheoChungTuMuaHang.Designer.cs">
+      <DependentUpon>UcTheoChungTuMuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\UcTheoHangHoaBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\UcTheoHangHoaBanHang.Designer.cs">
+      <DependentUpon>UcTheoHangHoaBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\UcTheoHangHoaMuaHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\UcTheoHangHoaMuaHang.Designer.cs">
+      <DependentUpon>UcTheoHangHoaMuaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\UCTrong.cs">
       <SubType>UserControl</SubType>
@@ -582,11 +617,17 @@
     <EmbeddedResource Include="GUI\UC\UcChuyenKho.resx">
       <DependentUpon>UcChuyenKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\UcTheoChungTu.resx">
-      <DependentUpon>UcTheoChungTu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UC\UcTheoChungTuBanhang.resx">
+      <DependentUpon>UcTheoChungTuBanhang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\UcTheoHangHoa.resx">
-      <DependentUpon>UcTheoHangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UC\UcTheoChungTuMuaHang.resx">
+      <DependentUpon>UcTheoChungTuMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\UcTheoHangHoaBanHang.resx">
+      <DependentUpon>UcTheoHangHoaBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\UcTheoHangHoaMuaHang.resx">
+      <DependentUpon>UcTheoHangHoaMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UC_ThuTien\Uc_ThuTien_DSPCN.resx">
       <DependentUpon>Uc_ThuTien_DSPCN.cs</DependentUpon>

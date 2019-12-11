@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using NTD.BUS;
 using NTD.DAO;
 using DevExpress.XtraEditors.Controls;
+using System.Globalization;
+using NTD.DTO;
 
 namespace NTD.GUI
 {
@@ -25,18 +27,24 @@ namespace NTD.GUI
         KhoHang_BUS khohang = new KhoHang_BUS();
         db db = new db();
         HangHoa_BUS hh = new HangHoa_BUS();
-        ChiTietHoaDonNhap_BUS hdn = new ChiTietHoaDonNhap_BUS();
+        ChiTietHoaDonBan_BUS cthdb_bus = new ChiTietHoaDonBan_BUS();
         DonVi_BUS dv = new DonVi_BUS();
         KhachHang_BUS khachHang = new KhachHang_BUS();
+        DieuKhoan_BUS dieukhoan = new DieuKhoan_BUS();
+        HinhThuc_BUS hinhthuc = new HinhThuc_BUS();
+        HoaDonBan_BUS hoaDonBan_BUS = new HoaDonBan_BUS();
+        ChungTuBan_BUS chungTuBan = new ChungTuBan_BUS();
+        ChiTietChungTuBan_BUS chiTietChungTu = new ChiTietChungTuBan_BUS();
+
+        int sl = 0;
         decimal soluong = 0;
         decimal thanhtien = 0;
         decimal dongia = 0;
-        int tongtien = 0;
         decimal ck = 0;
         decimal vat = 0;
-        
 
-        private void groupControl2_Paint(object sender, EventArgs e)
+
+        private void groupControl1_Paint(object sender, EventArgs e)
         {
             var table = khachHang.GetAllData();
 
@@ -61,16 +69,16 @@ namespace NTD.GUI
 
             cbKhoHang.EditValue = dataTable2.Rows[0][0];
 
-            int sl = db.GetSoLuong("HoaDonNhap") + 1;
+            int sl = db.GetSoLuong("HoaDonBan") + 1;
 
             string mhd;
             if (sl < 10)
             {
-                mhd = "HD00" + sl;
+                mhd = "HDB00" + sl;
             }
             else
             {
-                mhd = "HD0" + sl;
+                mhd = "HDB0" + sl;
             }
             txtMaPhieu.Text = mhd;
 
@@ -79,21 +87,33 @@ namespace NTD.GUI
             TextEditTenSP.NullText = @"(Click vào đây)";
 
 
-            var dt = hdn.GetDataSource();
+            var dt = cthdb_bus.GetDataSource();
 
             gridControl1.DataSource = dt;
 
-            loadSPTheoMaHang();
+            loadSP();
             loadDonVi();
 
             LookUpDonVi.BestFitMode = BestFitMode.BestFitResizePopup;
             LookupEditMaHang.BestFitMode = BestFitMode.BestFitResizePopup;
 
-            txtVAT.EditValue = 0;
+            txtVAT.EditValue = 10;
             txtCK.EditValue = 0;
+
+            DataTable dt2 = dieukhoan.GetAllData();
+            cbDieuKhoan.Properties.DataSource = dt2;
+            cbDieuKhoan.Properties.DisplayMember = "MoTa";
+            cbDieuKhoan.Properties.ValueMember = "MaDieuKhoan";
+            cbDieuKhoan.EditValue = dt2.Rows[0][0];
+
+            DataTable dt3 = hinhthuc.GetAllData();
+            cbHinhThuc.Properties.DataSource = dt3;
+            cbHinhThuc.Properties.DisplayMember = "MoTa";
+            cbHinhThuc.Properties.ValueMember = "MaHinhThuc";
+            cbHinhThuc.EditValue = dt3.Rows[0][0];
         }
 
-        private void loadSPTheoMaHang()
+        private void loadSP()
         {
             var dt = hh.GetDataSP();
             LookupEditMaHang.DataSource = dt;
@@ -131,7 +151,7 @@ namespace NTD.GUI
             }
 
             if (e.Column.FieldName == "SoLuong")
-            {
+            {              
                 ck = Convert.ToDecimal(txtCK.EditValue) / 100;
                 vat = Convert.ToDecimal(txtVAT.EditValue) / 100;
 
@@ -139,25 +159,31 @@ namespace NTD.GUI
                 dongia = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(colDonGia));
                 thanhtien = soluong * dongia;
 
-                if(ck != 0 && vat != 0)
-                    thanhtien = (thanhtien + (thanhtien *  vat)) - (thanhtien * ck);
+                if (ck != 0 && vat != 0)
+                {
+                    thanhtien = (thanhtien + (thanhtien * vat)) - (thanhtien * ck);
+                }
+                else if (ck == 0 && vat != 0)
+                {
+                    thanhtien = thanhtien + (thanhtien * vat);
+                }
+
+                int tt = (int)thanhtien;
+
                 gridView1.SetFocusedRowCellValue(colThanhTien, thanhtien);
 
                 for (int i = 0; i < gridView1.DataRowCount; i++)
                 {
-                    tongtien += Convert.ToInt32(gridView1.GetRowCellValue(i, "ThanhTien"));
-
-                    txtThanhToan.EditValue = tongtien.ToString();
+                    tt += Convert.ToInt32(gridView1.GetRowCellValue(i, "ThanhTien"));
                 }
-            }
 
-            
+                txtThanhToan.EditValue = tt.ToString();
+            }   
         }
 
         private void cbTenKH_EditValueChanged_1(object sender, EventArgs e)
         {
             txtMaKH.Text = cbTenKH.EditValue.ToString();
-            DataTable dt = khachHang.GetAllData();
         }
 
         private void groupControl2_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
@@ -165,52 +191,119 @@ namespace NTD.GUI
             if (e.Button.Properties.Caption == "Tạo Mới")
             {
                 gridView1.OptionsSelection.MultiSelect = true;
-
                 gridView1.SelectAll();
                 gridView1.DeleteSelectedRows();
-
+                txtThanhToan.Text = "";
                 txtDiaChi.Text = "";
-                txtGhiChu.Text = "";
-
-                MessageBox.Show("Tạo Thành Công Đơn Nhập Hàng");
             }
-            else if (e.Button.Properties.Caption == "Lưu & Thêm")
+
+            if (e.Button.Properties.Caption == "Lưu & Thêm")
             {
+                string MaHD = txtMaPhieu.Text;
+                //Lưu Chi Tiết Hóa Đơn
+                for (int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    string MaSP = gridView1.GetRowCellValue(i, "MaSP").ToString();
+                    string TenSP = gridView1.GetRowCellValue(i, "TenSP").ToString();
+                    string DonVi = gridView1.GetRowCellValue(i, "DonVi").ToString();
+                    int SoLuong = Convert.ToInt32(gridView1.GetRowCellValue(i, "SoLuong"));
+                    string dongia = gridView1.GetRowCellValue(i, "DonGia").ToString();
+                    float DonGia = float.Parse(dongia, NumberStyles.Any);
+                    string thanhtien = gridView1.GetRowCellValue(i, "ThanhTien").ToString();
+                    float ThanhTien = float.Parse(thanhtien, NumberStyles.Any);
+                    string GhiChu = gridView1.GetRowCellValue(i, "GhiChu").ToString();
+
+                    ChiTietHoaDonBan cthdb = new ChiTietHoaDonBan()
+                    {
+                        MaHoaDon = MaHD,
+                        MaSanPham = MaSP,
+                        TenSanPham = TenSP,
+                        DonVi = DonVi,
+                        SoLuong = SoLuong,
+                        DonGia = DonGia,
+                        ThanhTien = ThanhTien,
+                        GhiChu = GhiChu
+                    };
+
+                    cthdb_bus.ThemChiTietHoaDonBan(cthdb);
+
+                    //Lưu Chi Tiết Chứng Từ
+
+                    ChiTietChungTuBan ctctb = new ChiTietChungTuBan()
+                    {
+                        MaCT = MaHD,
+                        MaHang = MaSP,
+                        TenHang = TenSP,
+                        KhoHang = cbKhoHang.Text.ToString(),
+                        DVT = DonVi,
+                        SoLuong = SoLuong,
+                        DonGia = DonGia,
+                        ThanhTien = ThanhTien
+                    };
+
+                    chiTietChungTu.ThemChiTietChungTu(ctctb);
+                }
+
+                //Lưu Hóa Đơn
+
+                DateTime myDateTime = DateTime.Now;
+                string sqlFormattedDate = myDateTime.ToString("yyyy - MM - dd HH: mm:ss.fff");
+
+                HoaDonBan hoaDonBan = new HoaDonBan()
+                {
+                    MaHoaDon = MaHD,
+                    MaKhachHang = txtMaKH.Text,
+                    TenKhachHang = cbTenKH.Text,
+                    MaNhanVien = cbNhanVien.EditValue.ToString(),
+                    NgayBan = sqlFormattedDate,
+                    TongTien = float.Parse(txtThanhToan.Text, NumberStyles.Any),
+                    DaTra = 0,
+                    ConLai = float.Parse(txtThanhToan.Text, NumberStyles.Any),
+                    DieuKhoan = cbDieuKhoan.EditValue.ToString(),
+                    HinhThuc = cbHinhThuc.EditValue.ToString(),
+                    DienGiai = ""
+                };
+
+                hoaDonBan_BUS.ThemHoaDonBan(hoaDonBan);
+
+                //Lưu Chứng Từ
+
+                ck = ck * 100;
+                vat = vat * 100;
+
+                ChungTuBan ctb = new ChungTuBan()
+                {
+                    MaCT = MaHD,
+                    Ngay = sqlFormattedDate,
+                    PhieuVietTay = txtSoPhieu.Text,
+                    HoaDonVietTay = txtSoHoaDon.Text,
+                    NhaCungCap = cbTenKH.Text,
+                    CK = (float)ck,
+                    VAT = (float)vat,
+                    ThanhToan = float.Parse(txtThanhToan.Text, NumberStyles.Any),
+                    GhiChu = txtGhiChu.Text
+                };
+
+                chungTuBan.ThemChungTu(ctb);
+
                 gridView1.OptionsSelection.MultiSelect = true;
-
                 gridView1.SelectAll();
                 gridView1.DeleteSelectedRows();
-
+                txtThanhToan.Text = "";
                 txtDiaChi.Text = "";
-                txtGhiChu.Text = "";
 
-                MessageBox.Show("Lưu Thành Công Đơn Nhập Hàng");
+                sl += 1;
+                if (sl < 10)
+                {
+                    txtMaPhieu.Text = "HDB00" + sl;
+                }
+                else
+                {
+                    txtMaPhieu.Text = "HDB0" + sl;
+                }
             }
-            else if (e.Button.Properties.Caption == "Nạp Lại")
-            {
-                MessageBox.Show("Lưu Thành Công Đơn Nhập Hàng");
-            }
-            else if (e.Button.Properties.Caption == "In")
-            {
-                MessageBox.Show("Lưu Thành Công Đơn Nhập Hàng");
-            }
-            else if (e.Button.Properties.Caption == "Đóng")
-            {
-                
-            }
-        }
-
-        //private void groupControl2_Paint(object sender, PaintEventArgs e)
-        //{
-
-        //}
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
 
         }
-
-       
     }
 }
 

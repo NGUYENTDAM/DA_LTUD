@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace NTD.DAO
 {
-    public class DAO_HoaDonNhap
+    public class DAO_HoaDonBan
     {
         public db db = new db();
 
         public DataTable GetAllData()
         {
-            string sql = "select * from HoaDonNhap hdn";
+            string sql = "select * from HoaDonBan hdn";
             var rs = db.GetData(sql);
 
             return rs;
@@ -28,10 +28,10 @@ namespace NTD.DAO
             return rs;
         }
 
-        public int ThemHoaDonNhap(HoaDonNhap hdn)
+        public int ThemHoaDonBan(HoaDonBan hdb)
         {
-            string sql = string.Format("insert into [HoaDonNhap](MaHD,MaNCC,TenNCC,MaNV,NgayNhap,TongTien,DaTra,ConLai,DieuKhoan,HinhThuc,DienGiai) Values('{0}', N'{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}',N'{7}',N'{8}',N'{9}',N'{10}')"
-                , hdn.MaHoaDon, hdn.MaNCC, hdn.TenNCC, hdn.MaNhanVien, hdn.NgayMua, hdn.TongTien, hdn.DaTra, hdn.ConLai, hdn.DieuKhoan, hdn.HinhThuc, hdn.DienGiai);
+            string sql = string.Format("insert into [HoaDonBan](MaHD,MaKH,TenKH,MaNV,NgayBan,TongTien,DaTra,ConLai,DieuKhoan,HinhThuc,DienGiai) Values('{0}', N'{1}',N'{2}','{3}',N'{4}',N'{5}',N'{6}',N'{7}',N'{8}',N'{9}',N'{10}')"
+                , hdb.MaHoaDon, hdb.MaKhachHang, hdb.TenKhachHang, hdb.MaNhanVien, hdb.NgayBan, hdb.TongTien, hdb.DaTra, hdb.ConLai, hdb.DieuKhoan, hdb.HinhThuc, hdb.DienGiai);
 
             var rs = db.ExecuteSQL(sql);
 

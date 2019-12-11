@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 
 namespace NTD.BUS
 {
-    public class ChiTietHoaDonNhap_BUS
+    public class ChiTietHoaDonBan_BUS
     {
-        DAO_ChiTietHoaDonNhap cthdn = new DAO_ChiTietHoaDonNhap();
+        DAO_ChiTietHoaDonBan chiTietHoaDonBan = new DAO_ChiTietHoaDonBan();
         public DataTable GetDataSource()
         {
-            return cthdn.GetDataSource();
+            return chiTietHoaDonBan.GetDataSource();
         }
 
-        public int ThemChiTietHoaDonNhap(ChiTietHoaDonNhap hdn)
+        public int ThemChiTietHoaDonBan(ChiTietHoaDonBan hdb)
         {
-            return cthdn.ThemChiTietHoaDonNhap(hdn);
+            return chiTietHoaDonBan.ThemChiTietHoaDonBan(hdb);
         }
 
         public DataTable GetDataByMaHD(string maHD)
         {
-            return cthdn.GetDataByMaHD(maHD);
+            return chiTietHoaDonBan.GetDataByMaHD(maHD);
         }
     }
 }

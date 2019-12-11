@@ -1,6 +1,6 @@
 ﻿namespace NTD.GUI.UC
 {
-    partial class UcTheoHangHoa
+    partial class UcTheoHangHoaMuaHang
     {
         /// <summary> 
         /// Required designer variable.

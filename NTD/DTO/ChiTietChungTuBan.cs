@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace NTD.DTO
 {
-    public class ChiTietHoaDonBan
+    public class ChiTietChungTuBan
     {
-        public string MaHoaDon { get; set; }
-        public string MaSanPham { get; set; }
-        public string TenSanPham { get; set; }
-        public string DonVi { get; set; }
+        public string MaCT { get; set; }
+        public string MaHang { get; set; }
+        public string TenHang { get; set; }
+        public string KhoHang { get; set; }
+        public string DVT { get; set; }
         public int SoLuong { get; set; }
         public float DonGia { get; set; }
         public float ThanhTien { get; set; }
-        public string GhiChu { get; set; }
     }
 }
