@@ -22,5 +22,14 @@ namespace NTD.BUS
         {
             return ctn.ThemChiTietChungTu(chungtu);
         }
+
+        public DataTable TheoHangHoa()
+        {
+            return ctn.TheoHangHoa();
+        }
+        public int DeleteById(string ma)
+        {
+            return ctn.DeleteById(ma);
+        }
     }
 }

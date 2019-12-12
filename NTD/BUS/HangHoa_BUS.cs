@@ -62,6 +62,11 @@ namespace NTD.BUS
         {
             return hanghoa.GetDataSP();
         }
+        public int CapNhatMuaBan(string ma,int soluong)
+        {
+            return hanghoa.CapNhatMuaBan(ma, soluong);
+        }
+
     }
 
 }

@@ -30,6 +30,13 @@
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.grvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKhoHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.grvMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaChungTu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,13 +62,6 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colMaHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKhoHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMain)).BeginInit();
@@ -94,6 +94,69 @@
             this.grvDetail.GridControl = this.gridControl1;
             this.grvDetail.Name = "grvDetail";
             // 
+            // colMaHang
+            // 
+            this.colMaHang.Caption = "Mã Hàng";
+            this.colMaHang.FieldName = "MaHang";
+            this.colMaHang.Name = "colMaHang";
+            this.colMaHang.Visible = true;
+            this.colMaHang.VisibleIndex = 0;
+            this.colMaHang.Width = 115;
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.Caption = "Tên Hàng";
+            this.colTenHang.FieldName = "TenHang";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.Visible = true;
+            this.colTenHang.VisibleIndex = 1;
+            this.colTenHang.Width = 357;
+            // 
+            // colKhoHang
+            // 
+            this.colKhoHang.Caption = "Kho Hàng";
+            this.colKhoHang.FieldName = "KhoHang";
+            this.colKhoHang.Name = "colKhoHang";
+            this.colKhoHang.Visible = true;
+            this.colKhoHang.VisibleIndex = 2;
+            this.colKhoHang.Width = 136;
+            // 
+            // colDVT
+            // 
+            this.colDVT.Caption = "Đơn Vị Tính";
+            this.colDVT.FieldName = "DVT";
+            this.colDVT.Name = "colDVT";
+            this.colDVT.Visible = true;
+            this.colDVT.VisibleIndex = 3;
+            this.colDVT.Width = 78;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.Caption = "Số Lượng";
+            this.colSoLuong.FieldName = "SoLuong";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.Visible = true;
+            this.colSoLuong.VisibleIndex = 4;
+            this.colSoLuong.Width = 54;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.Caption = "Đơn Giá";
+            this.colDonGia.FieldName = "DonGia";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Visible = true;
+            this.colDonGia.VisibleIndex = 5;
+            this.colDonGia.Width = 115;
+            // 
+            // colThanhTien
+            // 
+            this.colThanhTien.Caption = "Thành Tiền";
+            this.colThanhTien.FieldName = "ThanhTien";
+            this.colThanhTien.Name = "colThanhTien";
+            this.colThanhTien.Visible = true;
+            this.colThanhTien.VisibleIndex = 6;
+            this.colThanhTien.Width = 260;
+            // 
             // gridControl1
             // 
             gridLevelNode1.LevelTemplate = this.grvDetail;
@@ -123,7 +186,10 @@
             this.colGhiChu});
             this.grvMain.GridControl = this.gridControl1;
             this.grvMain.Name = "grvMain";
-            this.grvMain.OptionsView.ShowGroupPanel = false;
+            this.grvMain.OptionsDetail.ShowDetailTabs = false;
+            this.grvMain.OptionsView.ShowFooter = true;
+            this.grvMain.MasterRowGetChildList += new DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventHandler(this.grvMain_MasterRowGetChildList);
+            this.grvMain.MasterRowGetRelationName += new DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventHandler(this.grvMain_MasterRowGetRelationName);
             // 
             // colMaChungTu
             // 
@@ -347,69 +413,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(1144, 289);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // colMaHang
-            // 
-            this.colMaHang.Caption = "Mã Hàng";
-            this.colMaHang.FieldName = "MaHang";
-            this.colMaHang.Name = "colMaHang";
-            this.colMaHang.Visible = true;
-            this.colMaHang.VisibleIndex = 0;
-            this.colMaHang.Width = 115;
-            // 
-            // colTenHang
-            // 
-            this.colTenHang.Caption = "Tên Hàng";
-            this.colTenHang.FieldName = "TenHang";
-            this.colTenHang.Name = "colTenHang";
-            this.colTenHang.Visible = true;
-            this.colTenHang.VisibleIndex = 1;
-            this.colTenHang.Width = 357;
-            // 
-            // colKhoHang
-            // 
-            this.colKhoHang.Caption = "Kho Hàng";
-            this.colKhoHang.FieldName = "KhoHang";
-            this.colKhoHang.Name = "colKhoHang";
-            this.colKhoHang.Visible = true;
-            this.colKhoHang.VisibleIndex = 2;
-            this.colKhoHang.Width = 136;
-            // 
-            // colDVT
-            // 
-            this.colDVT.Caption = "Đơn Vị Tính";
-            this.colDVT.FieldName = "DVT";
-            this.colDVT.Name = "colDVT";
-            this.colDVT.Visible = true;
-            this.colDVT.VisibleIndex = 3;
-            this.colDVT.Width = 78;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.Caption = "Số Lượng";
-            this.colSoLuong.FieldName = "SoLuong";
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.Visible = true;
-            this.colSoLuong.VisibleIndex = 4;
-            this.colSoLuong.Width = 54;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.Caption = "Đơn Giá";
-            this.colDonGia.FieldName = "DonGia";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Visible = true;
-            this.colDonGia.VisibleIndex = 5;
-            this.colDonGia.Width = 115;
-            // 
-            // colThanhTien
-            // 
-            this.colThanhTien.Caption = "Thành Tiền";
-            this.colThanhTien.FieldName = "ThanhTien";
-            this.colThanhTien.Name = "colThanhTien";
-            this.colThanhTien.Visible = true;
-            this.colThanhTien.VisibleIndex = 6;
-            this.colThanhTien.Width = 260;
             // 
             // UcTheoChungTuMuaHang
             // 

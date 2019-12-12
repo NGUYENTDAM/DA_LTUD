@@ -24,7 +24,23 @@ namespace NTD.GUI.UC
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
             DataTable dt1 = chungTu.GetAllData();
-            
+
+            //DataTable dt2 = chiTietChungTu.();
+
+            grvMain.GridControl.DataSource = dt1;
+            //grvDetail.GridControl.DataSource = dt1;
+        }
+
+        private void grvMain_MasterRowGetChildList(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventArgs e)
+        {
+            DataTable dt1 = chungTu.GetAllData();
+            grvDetail.GridControl.DataSource = dt1;
+
+        }
+
+        private void grvMain_MasterRowGetRelationName(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventArgs e)
+        {
+            e.RelationName = "Detail";
         }
     }
 }

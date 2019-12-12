@@ -43,6 +43,8 @@ namespace NTD.GUI.UC
         decimal ck = 0;
         decimal vat = 0;
 
+
+
         private void groupControl1_Paint(object sender, EventArgs e)
         {
             var table = ncc.GetAllData();
@@ -248,6 +250,7 @@ namespace NTD.GUI.UC
                     };
 
                     chiTietChungTu.ThemChiTietChungTu(ctctb);
+                    hh.CapNhatMuaBan(MaSP,SoLuong);
                 }
 
                 //Lưu Hóa Đơn
@@ -307,6 +310,9 @@ namespace NTD.GUI.UC
                     txtMaPhieu.Text = "HDN0" + sl;
                 }
             }
+            ///
+
+
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

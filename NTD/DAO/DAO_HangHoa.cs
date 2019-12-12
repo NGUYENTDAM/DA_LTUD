@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,22 @@ namespace NTD.DAO
 
             return rs;
         }
+        public int CapNhatMuaBan(string ma, int soluong)
+        {
+            string sql = string.Format("exec CapNhatHang '{0}', {1}", ma, soluong);
+            var rs = db.ExecuteSQL(sql);
+
+            return rs;
+        }
+
+        //public int CapNhatMuaBan(string ma, int soluong)
+        //{
+        //    string sql = "CapNhatHang";
+        //    List<SqlParameter> lst = new List<SqlParameter>();
+        //    lst.Add(new SqlParameter("@MaSP", ma));
+        //    lst.Add(new SqlParameter("@SoLuongMua", soluong));
+        //    return db.ExecuteStore(sql, lst.ToArray());
+        //}
 
         public DataTable GetDataSPTheoNCC(string nhaCungCap)
         {

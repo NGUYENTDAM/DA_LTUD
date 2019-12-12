@@ -18,6 +18,20 @@ namespace NTD.DAO
 
             return rs;
         }
+        public DataTable TheoHangHoa()
+        {
+            string sql = "select ct.MaCT,ctm.Ngay,ctm.NhaCungCap,ct.MaHang,ct.TenHang,ct.DVT,ct.KhoHang,ct.SoLuong,ct.DonGia ,ct.ThanhTien from ChiTietChungTuMua ct , ChungTuMua ctm where ct.MaCT = ctm.MaCT";
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
+        public int DeleteById(string ma)
+        {
+            string sql = string.Format("Delete from ChiTietChungTuMua Where MaCT = '{0}'", ma);
+            var rs = db.ExecuteSQL(sql);
+
+            return rs;
+        }
 
         public int ThemChiTietChungTu(ChiTietChungTuNhap chungtu)
         {
