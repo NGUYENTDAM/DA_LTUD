@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.grvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +55,7 @@
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label3 = new System.Windows.Forms.Label();
-            this.ucChucNangBan1 = new NTD.GUI.UC.UcChucNangBan();
+            this.ucChucNang = new NTD.GUI.UC.UcChucNangBan();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -97,8 +97,9 @@
             // colMaHang
             // 
             this.colMaHang.Caption = "Mã Hàng";
-            this.colMaHang.FieldName = "MaHang";
+            this.colMaHang.FieldName = "MaSP";
             this.colMaHang.Name = "colMaHang";
+            this.colMaHang.OptionsColumn.AllowEdit = false;
             this.colMaHang.Visible = true;
             this.colMaHang.VisibleIndex = 0;
             this.colMaHang.Width = 115;
@@ -106,8 +107,9 @@
             // colTenHang
             // 
             this.colTenHang.Caption = "Tên Hàng";
-            this.colTenHang.FieldName = "TenHang";
+            this.colTenHang.FieldName = "TenSP";
             this.colTenHang.Name = "colTenHang";
+            this.colTenHang.OptionsColumn.AllowEdit = false;
             this.colTenHang.Visible = true;
             this.colTenHang.VisibleIndex = 1;
             this.colTenHang.Width = 357;
@@ -117,6 +119,7 @@
             this.colKhoHang.Caption = "Kho Hàng";
             this.colKhoHang.FieldName = "KhoHang";
             this.colKhoHang.Name = "colKhoHang";
+            this.colKhoHang.OptionsColumn.AllowEdit = false;
             this.colKhoHang.Visible = true;
             this.colKhoHang.VisibleIndex = 2;
             this.colKhoHang.Width = 136;
@@ -124,8 +127,9 @@
             // colDVT
             // 
             this.colDVT.Caption = "Đơn Vị Tính";
-            this.colDVT.FieldName = "DVT";
+            this.colDVT.FieldName = "DonVi";
             this.colDVT.Name = "colDVT";
+            this.colDVT.OptionsColumn.AllowEdit = false;
             this.colDVT.Visible = true;
             this.colDVT.VisibleIndex = 3;
             this.colDVT.Width = 78;
@@ -135,6 +139,7 @@
             this.colSoLuong.Caption = "Số Lượng";
             this.colSoLuong.FieldName = "SoLuong";
             this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.OptionsColumn.AllowEdit = false;
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 4;
             this.colSoLuong.Width = 54;
@@ -144,6 +149,7 @@
             this.colDonGia.Caption = "Đơn Giá";
             this.colDonGia.FieldName = "DonGia";
             this.colDonGia.Name = "colDonGia";
+            this.colDonGia.OptionsColumn.AllowEdit = false;
             this.colDonGia.Visible = true;
             this.colDonGia.VisibleIndex = 5;
             this.colDonGia.Width = 115;
@@ -153,16 +159,17 @@
             this.colThanhTien.Caption = "Thành Tiền";
             this.colThanhTien.FieldName = "ThanhTien";
             this.colThanhTien.Name = "colThanhTien";
+            this.colThanhTien.OptionsColumn.AllowEdit = false;
             this.colThanhTien.Visible = true;
             this.colThanhTien.VisibleIndex = 6;
             this.colThanhTien.Width = 260;
             // 
             // gridControl1
             // 
-            gridLevelNode1.LevelTemplate = this.grvDetail;
-            gridLevelNode1.RelationName = "Detail";
+            gridLevelNode2.LevelTemplate = this.grvDetail;
+            gridLevelNode2.RelationName = "Detail";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(12, 113);
             this.gridControl1.MainView = this.grvMain;
             this.gridControl1.Name = "gridControl1";
@@ -187,9 +194,11 @@
             this.grvMain.GridControl = this.gridControl1;
             this.grvMain.Name = "grvMain";
             this.grvMain.OptionsDetail.ShowDetailTabs = false;
-            this.grvMain.OptionsView.ShowFooter = true;
+            this.grvMain.OptionsView.ShowGroupPanel = false;
+            this.grvMain.MasterRowEmpty += new DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventHandler(this.grvMain_MasterRowEmpty);
             this.grvMain.MasterRowGetChildList += new DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventHandler(this.grvMain_MasterRowGetChildList);
             this.grvMain.MasterRowGetRelationName += new DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventHandler(this.grvMain_MasterRowGetRelationName);
+            this.grvMain.MasterRowGetRelationCount += new DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventHandler(this.grvMain_MasterRowGetRelationCount);
             // 
             // colMaChungTu
             // 
@@ -198,7 +207,7 @@
             this.colMaChungTu.Name = "colMaChungTu";
             this.colMaChungTu.Visible = true;
             this.colMaChungTu.VisibleIndex = 0;
-            this.colMaChungTu.Width = 79;
+            this.colMaChungTu.Width = 127;
             // 
             // colNgay
             // 
@@ -207,7 +216,7 @@
             this.colNgay.Name = "colNgay";
             this.colNgay.Visible = true;
             this.colNgay.VisibleIndex = 1;
-            this.colNgay.Width = 127;
+            this.colNgay.Width = 104;
             // 
             // colPhieuVietTay
             // 
@@ -216,7 +225,7 @@
             this.colPhieuVietTay.Name = "colPhieuVietTay";
             this.colPhieuVietTay.Visible = true;
             this.colPhieuVietTay.VisibleIndex = 2;
-            this.colPhieuVietTay.Width = 113;
+            this.colPhieuVietTay.Width = 108;
             // 
             // colHoaDonVietTay
             // 
@@ -225,7 +234,7 @@
             this.colHoaDonVietTay.Name = "colHoaDonVietTay";
             this.colHoaDonVietTay.Visible = true;
             this.colHoaDonVietTay.VisibleIndex = 3;
-            this.colHoaDonVietTay.Width = 109;
+            this.colHoaDonVietTay.Width = 104;
             // 
             // colNhaCungCap
             // 
@@ -234,7 +243,7 @@
             this.colNhaCungCap.Name = "colNhaCungCap";
             this.colNhaCungCap.Visible = true;
             this.colNhaCungCap.VisibleIndex = 4;
-            this.colNhaCungCap.Width = 294;
+            this.colNhaCungCap.Width = 279;
             // 
             // colCK
             // 
@@ -243,7 +252,7 @@
             this.colCK.Name = "colCK";
             this.colCK.Visible = true;
             this.colCK.VisibleIndex = 5;
-            this.colCK.Width = 59;
+            this.colCK.Width = 56;
             // 
             // colVAT
             // 
@@ -252,7 +261,7 @@
             this.colVAT.Name = "colVAT";
             this.colVAT.Visible = true;
             this.colVAT.VisibleIndex = 6;
-            this.colVAT.Width = 64;
+            this.colVAT.Width = 61;
             // 
             // colThanhToan
             // 
@@ -261,7 +270,7 @@
             this.colThanhToan.Name = "colThanhToan";
             this.colThanhToan.Visible = true;
             this.colThanhToan.VisibleIndex = 7;
-            this.colThanhToan.Width = 189;
+            this.colThanhToan.Width = 133;
             // 
             // colGhiChu
             // 
@@ -270,7 +279,7 @@
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 8;
-            this.colGhiChu.Width = 81;
+            this.colGhiChu.Width = 143;
             // 
             // groupControl1
             // 
@@ -300,7 +309,7 @@
             this.groupControl2.Controls.Add(this.dateEdit1);
             this.groupControl2.Controls.Add(this.comboBoxEdit1);
             this.groupControl2.Controls.Add(this.label3);
-            this.groupControl2.Controls.Add(this.ucChucNangBan1);
+            this.groupControl2.Controls.Add(this.ucChucNang);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label1);
             this.groupControl2.Controls.Add(this.comboBox1);
@@ -313,7 +322,7 @@
             // dateEdit2
             // 
             this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(326, 35);
+            this.dateEdit2.Location = new System.Drawing.Point(324, 35);
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -325,7 +334,7 @@
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(167, 35);
+            this.dateEdit1.Location = new System.Drawing.Point(171, 35);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -352,17 +361,17 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Xem Theo";
             // 
-            // ucChucNangBan1
+            // ucChucNang
             // 
-            this.ucChucNangBan1.Location = new System.Drawing.Point(460, 23);
-            this.ucChucNangBan1.Name = "ucChucNangBan1";
-            this.ucChucNangBan1.Size = new System.Drawing.Size(589, 40);
-            this.ucChucNangBan1.TabIndex = 5;
+            this.ucChucNang.Location = new System.Drawing.Point(460, 23);
+            this.ucChucNang.Name = "ucChucNang";
+            this.ucChucNang.Size = new System.Drawing.Size(589, 40);
+            this.ucChucNang.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(293, 38);
+            this.label2.Location = new System.Drawing.Point(287, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -371,7 +380,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 35);
+            this.label1.Location = new System.Drawing.Point(141, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 2;
@@ -380,7 +389,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 32);
+            this.comboBox1.Location = new System.Drawing.Point(14, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
@@ -452,7 +461,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private System.Windows.Forms.Label label3;
-        private UcChucNangBan ucChucNangBan1;
+        private UcChucNangBan ucChucNang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;

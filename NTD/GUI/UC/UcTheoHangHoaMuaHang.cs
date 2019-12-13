@@ -61,18 +61,16 @@ namespace NTD.GUI.UC
 
         private void Dong(object sender, EventArgs e)
         {
-            
+            Form tmp = this.FindForm();
+            tmp.Close();
+            tmp.Dispose();
         }
 
         private void TaoMoi(object sender, EventArgs e)
         {
-            //PhieuNhapHang pbh = new PhieuNhapHang();
-            //frmMuaHang mh = new frmMuaHang();
-       
-            //pbh.Dock = DockStyle.Fill;
-            //ucBanHang1.Controls.Clear();
-            //ucBanHang1.Controls.Add(pbh);
-            //ucBanHang1.Dock = DockStyle.Fill;
+            ////////
+            PhieuNhapHang n = new PhieuNhapHang();
+            
 
         }
 

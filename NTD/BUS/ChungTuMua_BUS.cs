@@ -16,9 +16,18 @@ namespace NTD.BUS
         {
             return ctm.GetAllData();
         }
+        public DataTable ChiTietPhieuTheoChungTu()
+        {
+            return ctm.ChiTietPhieuTheoChungTu();
+        }
         public int ThemChungTu(ChungTuNhap chungtu)
         {
             return ctm.ThemChungTu(chungtu);
         }
+        public int DeleteById(string ma)
+        {
+            return ctm.DeleteById(ma);
+        }
+
     }
 }
