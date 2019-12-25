@@ -242,6 +242,9 @@ namespace NTD.GUI
                     };
 
                     chiTietChungTu.ThemChiTietChungTu(ctctb);
+
+                    // Cập nhật lại số lượng khi mua 
+                    hh.CapNhatMuaBan(MaSP, SoLuong);
                 }
 
                 //Lưu Hóa Đơn
@@ -302,6 +305,11 @@ namespace NTD.GUI
                     txtMaPhieu.Text = "HDB0" + sl;
                 }
             }
+
+        }
+
+        private void groupControl2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

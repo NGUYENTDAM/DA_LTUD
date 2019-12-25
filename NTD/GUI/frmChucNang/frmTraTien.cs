@@ -59,7 +59,7 @@ namespace NTD.GUI.frmChucNang
 
         private void frmTraTien_Load(object sender, EventArgs e)
         {
-            LoadDanhSachPC();
+            LoadDanhSachCN();
         }
     }
 }

@@ -22,5 +22,13 @@ namespace NTD.BUS
         {
             return ctn.ThemChiTietChungTu(chungtu);
         }
+        public DataTable TheoHangHoa()
+        {
+            return ctn.TheoHangHoa();
+        }
+        public DataTable TheoHangHoaBan(string tu, string den)
+        {
+            return ctn.TheoHangHoaBan(tu, den);
+        }
     }
 }

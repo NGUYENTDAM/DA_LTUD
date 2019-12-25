@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.grvDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,14 +51,11 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dtDen = new DevExpress.XtraEditors.DateEdit();
+            this.dtTu = new DevExpress.XtraEditors.DateEdit();
             this.ucChucNang = new NTD.GUI.UC.UcChucNangBan();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -71,11 +68,10 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -166,14 +162,14 @@
             // 
             // gridControl1
             // 
-            gridLevelNode2.LevelTemplate = this.grvDetail;
-            gridLevelNode2.RelationName = "Detail";
+            gridLevelNode1.LevelTemplate = this.grvDetail;
+            gridLevelNode1.RelationName = "Detail";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.gridControl1.Location = new System.Drawing.Point(12, 113);
+            gridLevelNode1});
+            this.gridControl1.Location = new System.Drawing.Point(12, 86);
             this.gridControl1.MainView = this.grvMain;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1140, 285);
+            this.gridControl1.Size = new System.Drawing.Size(1140, 312);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvMain,
@@ -305,65 +301,44 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.dateEdit2);
-            this.groupControl2.Controls.Add(this.dateEdit1);
-            this.groupControl2.Controls.Add(this.comboBoxEdit1);
-            this.groupControl2.Controls.Add(this.label3);
+            this.groupControl2.Controls.Add(this.dtDen);
+            this.groupControl2.Controls.Add(this.dtTu);
             this.groupControl2.Controls.Add(this.ucChucNang);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label1);
-            this.groupControl2.Controls.Add(this.comboBox1);
             this.groupControl2.Location = new System.Drawing.Point(12, 12);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1140, 97);
+            this.groupControl2.Size = new System.Drawing.Size(1140, 70);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Bảng Kê Tổng Hợp";
             // 
-            // dateEdit2
+            // dtDen
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(324, 35);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtDen.EditValue = null;
+            this.dtDen.Location = new System.Drawing.Point(205, 37);
+            this.dtDen.Name = "dtDen";
+            this.dtDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtDen.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(113, 20);
-            this.dateEdit2.TabIndex = 9;
+            this.dtDen.Size = new System.Drawing.Size(113, 20);
+            this.dtDen.TabIndex = 9;
             // 
-            // dateEdit1
+            // dtTu
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(171, 35);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtTu.EditValue = null;
+            this.dtTu.Location = new System.Drawing.Point(52, 37);
+            this.dtTu.Name = "dtTu";
+            this.dtTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtTu.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(110, 20);
-            this.dateEdit1.TabIndex = 8;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(71, 71);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(524, 20);
-            this.comboBoxEdit1.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Xem Theo";
+            this.dtTu.Size = new System.Drawing.Size(110, 20);
+            this.dtTu.TabIndex = 8;
             // 
             // ucChucNang
             // 
-            this.ucChucNang.Location = new System.Drawing.Point(460, 23);
+            this.ucChucNang.Location = new System.Drawing.Point(341, 25);
             this.ucChucNang.Name = "ucChucNang";
             this.ucChucNang.Size = new System.Drawing.Size(589, 40);
             this.ucChucNang.TabIndex = 5;
@@ -371,7 +346,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 38);
+            this.label2.Location = new System.Drawing.Point(168, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -380,19 +355,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 37);
+            this.label1.Location = new System.Drawing.Point(22, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Từ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // Root
             // 
@@ -409,17 +376,20 @@
             // 
             this.layoutControlItem1.Control = this.groupControl2;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 74);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(5, 74);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1144, 101);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1144, 74);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 101);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1144, 289);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1144, 316);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -440,11 +410,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -459,17 +428,14 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView grvMain;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private System.Windows.Forms.Label label3;
         private UcChucNangBan ucChucNang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dtDen;
+        private DevExpress.XtraEditors.DateEdit dtTu;
         private DevExpress.XtraGrid.Views.Grid.GridView grvDetail;
         private DevExpress.XtraGrid.Columns.GridColumn colMaChungTu;
         private DevExpress.XtraGrid.Columns.GridColumn colNgay;

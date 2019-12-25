@@ -36,9 +36,27 @@ namespace NTD.GUI.UC
             ucChucNang.Controls["btnXuat"].Click += Xuat;
             ucChucNang.Controls["btnDong"].Click += Dong;
 
+            dtTu.Text = "12/1/2019";
+            dtDen.Text = "12/30/2019";
+
+
             LoadData();
            
         }
+        private void LoadTheoTime()
+        {
+            DateTime tu, den;
+
+            tu = DateTime.Parse(dtTu.Text);
+            den = DateTime.Parse(dtDen.Text);
+            string sqlFormattedDate = tu.ToString("yyyy - MM - dd HH: mm:ss.fff");
+            string sqlFormattedDate1 = den.ToString("yyyy - MM - dd HH: mm:ss.fff");
+
+            var dt = chungTu.TheoChungTuTime(sqlFormattedDate, sqlFormattedDate1);
+
+            gridControl1.DataSource = dt;
+        }
+
 
         private void Dong(object sender, EventArgs e)
         {
@@ -73,7 +91,7 @@ namespace NTD.GUI.UC
 
         private void Xem(object sender, EventArgs e)
         {
-            LoadData();
+            LoadTheoTime();
         }
 
         private void grvMain_MasterRowEmpty(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventArgs e)

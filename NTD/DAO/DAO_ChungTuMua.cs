@@ -18,6 +18,14 @@ namespace NTD.DAO
 
             return rs;
         }
+        //Theo Time
+        public DataTable TheoChungTuTime(string tu,string den)
+        {
+            string sql = string.Format("select * from ChungTuMua where Ngay between '{0}' and '{1}'", tu, den);
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
         public DataTable ChiTietPhieuTheoChungTu()
         {
             string sql =

@@ -187,6 +187,7 @@
             this.groupControl2.Size = new System.Drawing.Size(918, 452);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl2_CustomButtonClick);
+            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // layoutControl1
             // 

@@ -57,5 +57,24 @@ namespace NTD.GUI
         {
 
         }
+
+        private void groupControl2_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            if (e.Button.Properties.Caption == "Xem")
+            {
+                LoadAllData();
+            }
+            if (e.Button.Properties.Caption == "Xuất")
+            {
+                XtraSaveFileDialog SaveFileDialog = new XtraSaveFileDialog();
+                SaveFileDialog.ShowDialog();
+
+                gcTonKho.ExportToXlsx(SaveFileDialog.FileName + ".xlsx");
+            }
+            if (e.Button.Properties.Caption == "Đóng")
+            {
+                this.Close();
+            }
+        }
     }
 }

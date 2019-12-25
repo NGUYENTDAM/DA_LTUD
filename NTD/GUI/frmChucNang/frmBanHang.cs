@@ -68,5 +68,23 @@ namespace NTD.GUI
         {
             LoadTheoHangHoa();
         }
+
+        private void nbHangHoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThemHangHoa thh = new frmThemHangHoa();
+            thh.ShowDialog();
+        }
+
+        private void khKhachHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThemKhachHang thh = new frmThemKhachHang();
+            thh.ShowDialog();
+        }
+
+        private void nbKhoHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThemKhoHang thh = new frmThemKhoHang();
+            thh.ShowDialog();
+        }
     }
 }

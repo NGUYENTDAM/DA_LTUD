@@ -42,11 +42,10 @@
             this.nbPhieuChuyenKho = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTheoChungTu = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbTheoHangHoa = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbHangHoa = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbKhoHang = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.ucControl = new NTD.GUI.UC.UcBanHang();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
@@ -131,9 +130,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.navBarControl2);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 26);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(191, 360);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(193, 358);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // navBarControl2
@@ -147,14 +146,13 @@
             this.navBarControl2.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.nbPhieuChuyenKho,
             this.nbTheoChungTu,
-            this.nbTheoHangHoa,
-            this.navBarItem4,
-            this.navBarItem5,
-            this.navBarItem6});
+            this.nbHangHoa,
+            this.nbKhoHang,
+            this.nbNhanVien});
             this.navBarControl2.Location = new System.Drawing.Point(0, 0);
             this.navBarControl2.Name = "navBarControl2";
-            this.navBarControl2.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl2.Size = new System.Drawing.Size(191, 360);
+            this.navBarControl2.OptionsNavPane.ExpandedWidth = 193;
+            this.navBarControl2.Size = new System.Drawing.Size(193, 358);
             this.navBarControl2.TabIndex = 0;
             this.navBarControl2.Text = "navBarControl2";
             // 
@@ -179,56 +177,50 @@
             this.navBarGroup3.Caption = "Bảng Kê";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTheoChungTu),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTheoHangHoa)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTheoChungTu)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // nbTheoChungTu
             // 
-            this.nbTheoChungTu.Caption = "Theo Chứng Từ";
+            this.nbTheoChungTu.Caption = "Bảng kê";
             this.nbTheoChungTu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbTheoChungTu.ImageOptions.LargeImage")));
             this.nbTheoChungTu.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbTheoChungTu.ImageOptions.SmallImage")));
             this.nbTheoChungTu.Name = "nbTheoChungTu";
             this.nbTheoChungTu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTheoChungTu_LinkClicked);
-            // 
-            // nbTheoHangHoa
-            // 
-            this.nbTheoHangHoa.Caption = "Theo Hàng Hóa";
-            this.nbTheoHangHoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbTheoHangHoa.ImageOptions.LargeImage")));
-            this.nbTheoHangHoa.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbTheoHangHoa.ImageOptions.SmallImage")));
-            this.nbTheoHangHoa.Name = "nbTheoHangHoa";
-            this.nbTheoHangHoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTheoHangHoa_LinkClicked);
             // 
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Thêm Danh Mục";
             this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbHangHoa),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbKhoHang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbNhanVien)});
             this.navBarGroup4.Name = "navBarGroup4";
             // 
-            // navBarItem4
+            // nbHangHoa
             // 
-            this.navBarItem4.Caption = "Hàng Hóa";
-            this.navBarItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.ImageOptions.LargeImage")));
-            this.navBarItem4.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.ImageOptions.SmallImage")));
-            this.navBarItem4.Name = "navBarItem4";
+            this.nbHangHoa.Caption = "Hàng Hóa";
+            this.nbHangHoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbHangHoa.ImageOptions.LargeImage")));
+            this.nbHangHoa.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbHangHoa.ImageOptions.SmallImage")));
+            this.nbHangHoa.Name = "nbHangHoa";
+            this.nbHangHoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbHangHoa_LinkClicked);
             // 
-            // navBarItem5
+            // nbKhoHang
             // 
-            this.navBarItem5.Caption = "Kho Hàng";
-            this.navBarItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.ImageOptions.LargeImage")));
-            this.navBarItem5.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.ImageOptions.SmallImage")));
-            this.navBarItem5.Name = "navBarItem5";
+            this.nbKhoHang.Caption = "Kho Hàng";
+            this.nbKhoHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbKhoHang.ImageOptions.LargeImage")));
+            this.nbKhoHang.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbKhoHang.ImageOptions.SmallImage")));
+            this.nbKhoHang.Name = "nbKhoHang";
+            this.nbKhoHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbKhoHang_LinkClicked);
             // 
-            // navBarItem6
+            // nbNhanVien
             // 
-            this.navBarItem6.Caption = "Nhân Viên";
-            this.navBarItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem6.ImageOptions.LargeImage")));
-            this.navBarItem6.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem6.ImageOptions.SmallImage")));
-            this.navBarItem6.Name = "navBarItem6";
+            this.nbNhanVien.Caption = "Nhân Viên";
+            this.nbNhanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbNhanVien.ImageOptions.LargeImage")));
+            this.nbNhanVien.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbNhanVien.ImageOptions.SmallImage")));
+            this.nbNhanVien.Name = "nbNhanVien";
+            this.nbNhanVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbNhanVien_LinkClicked);
             // 
             // ucControl
             // 
@@ -271,11 +263,10 @@
         private DevExpress.XtraNavBar.NavBarItem nbPhieuChuyenKho;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem nbTheoChungTu;
-        private DevExpress.XtraNavBar.NavBarItem nbTheoHangHoa;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem nbHangHoa;
+        private DevExpress.XtraNavBar.NavBarItem nbKhoHang;
+        private DevExpress.XtraNavBar.NavBarItem nbNhanVien;
         private UC.UcBanHang ucControl;
     }
 }

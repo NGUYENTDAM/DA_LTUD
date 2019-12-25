@@ -39,8 +39,6 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbDSPCN = new DevExpress.XtraNavBar.NavBarItem();
             this.nbDSPTN = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbTDCN = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbTHCN = new DevExpress.XtraNavBar.NavBarItem();
             this.ucControl = new NTD.GUI.UC.UCTrong();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
@@ -81,9 +79,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(185, 414);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(187, 412);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -96,13 +94,11 @@
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.nbDSPC,
             this.nbDSPCN,
-            this.nbDSPTN,
-            this.nbTDCN,
-            this.nbTHCN});
+            this.nbDSPTN});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 185;
-            this.navBarControl1.Size = new System.Drawing.Size(185, 414);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 187;
+            this.navBarControl1.Size = new System.Drawing.Size(187, 412);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -128,9 +124,7 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbDSPCN),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbDSPTN),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTDCN),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTHCN)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbDSPTN)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // nbDSPCN
@@ -149,18 +143,6 @@
             this.nbDSPTN.Name = "nbDSPTN";
             this.nbDSPTN.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbDSPTN_LinkClicked);
             // 
-            // nbTDCN
-            // 
-            this.nbTDCN.Caption = "Theo Dõi Công Nợ";
-            this.nbTDCN.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbTDCN.ImageOptions.SmallImage")));
-            this.nbTDCN.Name = "nbTDCN";
-            // 
-            // nbTHCN
-            // 
-            this.nbTHCN.Caption = "Tổng Hợp Công Nợ";
-            this.nbTHCN.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbTHCN.ImageOptions.SmallImage")));
-            this.nbTHCN.Name = "nbTHCN";
-            // 
             // ucControl
             // 
             this.ucControl.Location = new System.Drawing.Point(195, 0);
@@ -176,7 +158,7 @@
             this.Controls.Add(this.ucControl);
             this.Controls.Add(this.dockPanel1);
             this.Name = "frmTraTien";
-            this.Text = "frmTraTien";
+            this.Text = "Trả Tiền";
             this.Load += new System.EventHandler(this.frmTraTien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
@@ -198,7 +180,5 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem nbDSPCN;
         private DevExpress.XtraNavBar.NavBarItem nbDSPTN;
-        private DevExpress.XtraNavBar.NavBarItem nbTDCN;
-        private DevExpress.XtraNavBar.NavBarItem nbTHCN;
     }
 }

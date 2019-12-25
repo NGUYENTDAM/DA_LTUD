@@ -110,6 +110,9 @@
     <Compile Include="BUS\ChiTietHoaDonNhap_BUS.cs" />
     <Compile Include="BUS\ChungTuBan_BUS.cs" />
     <Compile Include="BUS\ChungTuMua_BUS.cs" />
+    <Compile Include="BUS\ChuyenKho_BUS.cs" />
+    <Compile Include="BUS\DanhSachPhieuChi_BUS.cs" />
+    <Compile Include="BUS\DanhSachPhieuThu_BUS.cs" />
     <Compile Include="BUS\DieuKhoan_BUS.cs" />
     <Compile Include="BUS\DonVi_BUS.cs" />
     <Compile Include="BUS\HangHoa_BUS.cs" />
@@ -133,6 +136,9 @@
     <Compile Include="DAO\DAO_ChiTietHoaDonNhap.cs" />
     <Compile Include="DAO\DAO_ChungTuBan.cs" />
     <Compile Include="DAO\DAO_ChungTuMua.cs" />
+    <Compile Include="DAO\DAO_ChuyenKho.cs" />
+    <Compile Include="DAO\DAO_DanhSachPhieuChi.cs" />
+    <Compile Include="DAO\DAO_DanhSachPhieuThu.cs" />
     <Compile Include="DAO\DAO_DieuKhoan.cs" />
     <Compile Include="DAO\DAO_DonVi.cs" />
     <Compile Include="DAO\DAO_HangHoa.cs" />
@@ -157,6 +163,7 @@
     <Compile Include="DTO\ChiTietHoaDonNhap.cs" />
     <Compile Include="DTO\ChungTuBan.cs" />
     <Compile Include="DTO\ChungTuNhap.cs" />
+    <Compile Include="DTO\ChuyenKho.cs" />
     <Compile Include="DTO\DieuKhoan.cs" />
     <Compile Include="DTO\DonVi.cs" />
     <Compile Include="DTO\Form.cs" />
@@ -170,6 +177,8 @@
     <Compile Include="DTO\NhaCC.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\NhomHang.cs" />
+    <Compile Include="DTO\PhieuChi.cs" />
+    <Compile Include="DTO\PhieuThu.cs" />
     <Compile Include="DTO\Product.cs" />
     <Compile Include="DTO\RoleForm.cs" />
     <Compile Include="DTO\RoleUser.cs" />
@@ -206,6 +215,18 @@
     </Compile>
     <Compile Include="GUI\frmChucNang\frmChuyenKho.Designer.cs">
       <DependentUpon>frmChuyenKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChucNang\frmLapPhieuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChucNang\frmLapPhieuChi.Designer.cs">
+      <DependentUpon>frmLapPhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChucNang\frmLapPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChucNang\frmLapPhieuThu.Designer.cs">
+      <DependentUpon>frmLapPhieuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmChucNang\frmTraTien.cs">
       <SubType>Form</SubType>
@@ -399,10 +420,10 @@
     <Compile Include="GUI\UC\UcChucNangBan.Designer.cs">
       <DependentUpon>UcChucNangBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC\UcChuyenKho.cs">
+    <Compile Include="GUI\UC\UC_ChuyenKho\UcChuyenKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC\UcChuyenKho.Designer.cs">
+    <Compile Include="GUI\UC\UC_ChuyenKho\UcChuyenKho.Designer.cs">
       <DependentUpon>UcChuyenKho.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\UcTheoChungTuBanhang.cs">
@@ -434,6 +455,12 @@
     </Compile>
     <Compile Include="GUI\UC\UCTrong.Designer.cs">
       <DependentUpon>UCTrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UC\UC_ChuyenKho\UcChuyenKhoTheoChungTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\UC_ChuyenKho\UcChuyenKhoTheoChungTu.Designer.cs">
+      <DependentUpon>UcChuyenKhoTheoChungTu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\UC_ThuTien\Uc_ThuTien_DSPCN.cs">
       <SubType>UserControl</SubType>
@@ -517,6 +544,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChucNang\frmChuyenKho.resx">
       <DependentUpon>frmChuyenKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChucNang\frmLapPhieuChi.resx">
+      <DependentUpon>frmLapPhieuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChucNang\frmLapPhieuThu.resx">
+      <DependentUpon>frmLapPhieuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChucNang\frmTraTien.resx">
       <DependentUpon>frmTraTien.cs</DependentUpon>
@@ -614,7 +647,7 @@
     <EmbeddedResource Include="GUI\UC\UcChucNangBan.resx">
       <DependentUpon>UcChucNangBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC\UcChuyenKho.resx">
+    <EmbeddedResource Include="GUI\UC\UC_ChuyenKho\UcChuyenKho.resx">
       <DependentUpon>UcChuyenKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UcTheoChungTuBanhang.resx">
@@ -628,6 +661,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UcTheoHangHoaMuaHang.resx">
       <DependentUpon>UcTheoHangHoaMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\UC_ChuyenKho\UcChuyenKhoTheoChungTu.resx">
+      <DependentUpon>UcChuyenKhoTheoChungTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\UC_ThuTien\Uc_ThuTien_DSPCN.resx">
       <DependentUpon>Uc_ThuTien_DSPCN.cs</DependentUpon>

@@ -20,7 +20,7 @@ namespace NTD.DAO
         }
         public int ThemDV(DonVi dv)
         {
-            string sql = string.Format("insert into [DonVi](MaDonVi,TenDonVi,GhiChu) Values('{0}', N'{1}',N'{1}')",dv.Ma,dv.Ten,dv.GhiChu);
+            string sql = string.Format("insert into [DonVi](MaDonVi,TenDonVi,GhiChu) Values('{0}', N'{1}',N'{2}')",dv.Ma,dv.Ten,dv.GhiChu);
 
             var rs = db.ExecuteSQL(sql);
 

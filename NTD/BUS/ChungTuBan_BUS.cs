@@ -21,5 +21,14 @@ namespace NTD.BUS
         {
             return ctb.ThemChungTu(chungtu);
         }
+        public int DeleteById(string ma)
+        {
+            return ctb.DeleteById(ma);
+        }
+
+        public DataTable TheoChungTuTime(string tu, string den)
+        {
+            return ctb.TheoChungTuTime(tu, den);
+        }
     }
 }

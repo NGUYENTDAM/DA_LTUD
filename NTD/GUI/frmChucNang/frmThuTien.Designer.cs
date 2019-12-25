@@ -40,8 +40,6 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.nbTraNgay = new DevExpress.XtraNavBar.NavBarItem();
-            this.nvTheoDoiCongNo = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbTongHopCongNo = new DevExpress.XtraNavBar.NavBarItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ucControl = new NTD.GUI.UC.UcBanHang();
@@ -88,9 +86,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.layoutControl1);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 26);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(202, 471);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(204, 469);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // layoutControl1
@@ -100,7 +98,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(202, 471);
+            this.layoutControl1.Size = new System.Drawing.Size(204, 469);
             this.layoutControl1.TabIndex = 3;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -113,13 +111,11 @@
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.nbDSPT,
             this.navBarItem2,
-            this.nbTraNgay,
-            this.nvTheoDoiCongNo,
-            this.nbTongHopCongNo});
+            this.nbTraNgay});
             this.navBarControl1.Location = new System.Drawing.Point(12, 12);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 178;
-            this.navBarControl1.Size = new System.Drawing.Size(178, 447);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 180;
+            this.navBarControl1.Size = new System.Drawing.Size(180, 445);
             this.navBarControl1.TabIndex = 4;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -145,9 +141,7 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTraNgay),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nvTheoDoiCongNo),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTongHopCongNo)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbTraNgay)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBarItem2
@@ -166,21 +160,6 @@
             this.nbTraNgay.Name = "nbTraNgay";
             this.nbTraNgay.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTraNgay_LinkClicked);
             // 
-            // nvTheoDoiCongNo
-            // 
-            this.nvTheoDoiCongNo.Caption = "Theo Dõi Công Nợ";
-            this.nvTheoDoiCongNo.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.ImageOptions.SmallImage")));
-            this.nvTheoDoiCongNo.Name = "nvTheoDoiCongNo";
-            this.nvTheoDoiCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nvTheoDoiCongNo_LinkClicked);
-            // 
-            // nbTongHopCongNo
-            // 
-            this.nbTongHopCongNo.Caption = "Tổng Hợp Công Nợ";
-            this.nbTongHopCongNo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.ImageOptions.LargeImage")));
-            this.nbTongHopCongNo.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.ImageOptions.SmallImage")));
-            this.nbTongHopCongNo.Name = "nbTongHopCongNo";
-            this.nbTongHopCongNo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTongHopCongNo_LinkClicked);
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -188,7 +167,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(202, 471);
+            this.Root.Size = new System.Drawing.Size(204, 469);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -196,7 +175,7 @@
             this.layoutControlItem1.Control = this.navBarControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(182, 451);
+            this.layoutControlItem1.Size = new System.Drawing.Size(184, 449);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -215,7 +194,7 @@
             this.Controls.Add(this.ucControl);
             this.Controls.Add(this.dockPanel2);
             this.Name = "frmThuTien";
-            this.Text = "frmThuTien";
+            this.Text = "Thu Tiền";
             this.Load += new System.EventHandler(this.frmThuTien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel2.ResumeLayout(false);
@@ -243,8 +222,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem nbTraNgay;
-        private DevExpress.XtraNavBar.NavBarItem nvTheoDoiCongNo;
-        private DevExpress.XtraNavBar.NavBarItem nbTongHopCongNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

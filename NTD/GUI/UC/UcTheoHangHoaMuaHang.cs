@@ -24,6 +24,20 @@ namespace NTD.GUI.UC
             DataTable dt = ct.TheoHangHoa();
             gcTheoHangHoa.DataSource = dt;
         }
+
+        private void LoadTheoTime()
+        {
+            DateTime tu, den;
+
+            tu = DateTime.Parse(dtTu.Text);
+            den = DateTime.Parse(dtDen.Text);
+            string sqlFormattedDate = tu.ToString("yyyy - MM - dd HH: mm:ss.fff");
+            string sqlFormattedDate1 = den.ToString("yyyy - MM - dd HH: mm:ss.fff");
+
+            var dt = ct.TheoHangHoaTime(sqlFormattedDate, sqlFormattedDate1);
+
+            gcTheoHangHoa.DataSource = dt;
+        }
         private void UcTheoHangHoa_Load(object sender, EventArgs e)
         {
             ucChungNang.Controls["btnXem"].Click += Xem;
@@ -31,6 +45,10 @@ namespace NTD.GUI.UC
             ucChungNang.Controls["btnDong"].Click += Dong;
             ucChungNang.Controls["btnXoa"].Click += Xoa;
             ucChungNang.Controls["btnXuat"].Click += Xuat;
+
+            dtTu.Text = "12/1/2019";
+            dtDen.Text = "12/30/2019";
+
 
             LoadData();
         }
@@ -76,7 +94,7 @@ namespace NTD.GUI.UC
 
         private void Xem(object sender, EventArgs e)
         {
-            LoadData();
+            LoadTheoTime();
         }
 
         private void groupControl2_Paint(object sender, PaintEventArgs e)

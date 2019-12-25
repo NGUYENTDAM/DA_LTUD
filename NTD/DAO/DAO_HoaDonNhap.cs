@@ -37,5 +37,38 @@ namespace NTD.DAO
 
             return rs;
         }
+        // Load danh sách phiếu trả ngay frm trả tiền
+        public DataTable DSPTN_TraTien()
+        {
+            string sql = "select hd.MaHD,hd.NgayNhap,dk.MoTa,hd.MaNCC,ncc.Ten, hd.TongTien,hd.DaTra,hd.ConLai,hd.MaNV from HoaDonNhap hd ,NhaCungCap ncc ,DieuKhoan dk where hd.DieuKhoan = 'TN' and ncc.MaNCC = hd.MaNCC and dk.MaDieuKhoan = hd.DieuKhoan and hd.IsCheck =1";
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
+        //Theo Time
+        public DataTable DSPTNTime_TraTien(string tu,string den)
+        {
+            string sql = string.Format("select hd.MaHD,hd.NgayNhap,dk.MoTa,hd.MaNCC,ncc.Ten, hd.TongTien,hd.DaTra,hd.ConLai,hd.MaNV from HoaDonNhap hd ,NhaCungCap ncc ,DieuKhoan dk where hd.DieuKhoan = 'TN' and ncc.MaNCC = hd.MaNCC and dk.MaDieuKhoan = hd.DieuKhoan and hd.IsCheck =1" +
+                "and hd.NgayNhap between '{0}' and '{1}'",tu,den);
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
+        public DataTable DSPCNTime_TraTien(string tu, string den)
+        {
+            string sql = string.Format("select hd.MaHD,hd.NgayNhap,dk.MoTa,hd.MaNCC,ncc.Ten, hd.TongTien,hd.DaTra,hd.ConLai,hd.MaNV from HoaDonNhap hd ,NhaCungCap ncc ,DieuKhoan dk where hd.DieuKhoan = 'CN' and ncc.MaNCC = hd.MaNCC and dk.MaDieuKhoan = hd.DieuKhoan and hd.IsCheck =1" +
+                "and hd.NgayNhap between '{0}' and '{1}'", tu, den);
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
+        // Load danh sách phiếu công nợ frm trả tiền
+        public DataTable DSPCN_TraTien()
+        {
+            string sql = "select hd.MaHD,hd.NgayNhap,dk.MoTa,hd.MaNCC,ncc.Ten, hd.TongTien,hd.DaTra,hd.ConLai,hd.MaNV from HoaDonNhap hd ,NhaCungCap ncc ,DieuKhoan dk where hd.DieuKhoan = 'CN' and ncc.MaNCC = hd.MaNCC and dk.MaDieuKhoan = hd.DieuKhoan and hd.IsCheck =1";
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
     }
 }

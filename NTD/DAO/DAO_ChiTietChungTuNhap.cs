@@ -17,10 +17,19 @@ namespace NTD.DAO
             var rs = db.GetData(sql);
 
             return rs;
+            
         }
         public DataTable TheoHangHoa()
         {
             string sql = "select ct.MaCT,ctm.Ngay,ctm.NhaCungCap,ct.MaHang,ct.TenHang,ct.DVT,ct.KhoHang,ct.SoLuong,ct.DonGia ,ct.ThanhTien from ChiTietChungTuMua ct , ChungTuMua ctm where ct.MaCT = ctm.MaCT";
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
+        //Time
+        public DataTable TheoHangHoaTime(string tu,string den)
+        {
+            string sql = string.Format("select ct.MaCT,ctm.Ngay,ctm.NhaCungCap,ct.MaHang,ct.TenHang,ct.DVT,ct.KhoHang,ct.SoLuong,ct.DonGia ,ct.ThanhTien from ChiTietChungTuMua ct , ChungTuMua ctm where ct.MaCT = ctm.MaCT and ctm.Ngay between '{0}' and '{1}'", tu, den);
             var rs = db.GetData(sql);
 
             return rs;

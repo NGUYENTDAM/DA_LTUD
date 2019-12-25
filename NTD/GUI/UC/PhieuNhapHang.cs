@@ -252,7 +252,7 @@ namespace NTD.GUI.UC
                     chiTietChungTu.ThemChiTietChungTu(ctctb);
 
                     // Cập nhật lại số lượng khi mua 
-                    //hh.CapNhatMuaBan(MaSP,SoLuong);
+                    hh.CapNhatMuaBan(MaSP,SoLuong);
                 }
 
                 //Lưu Hóa Đơn

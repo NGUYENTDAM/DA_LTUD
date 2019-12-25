@@ -19,7 +19,24 @@ namespace NTD.BUS
         public DataTable GetAllData ()
         {
             return hoaDonNhap.GetAllData();
+
         }
-        
+        public DataTable DSPTN_TraTien()
+        {
+            return hoaDonNhap.DSPTN_TraTien();
+        }
+        public DataTable DSPTNTime_TraTien(string tu, string den)
+        {
+            return hoaDonNhap.DSPTNTime_TraTien(tu,den);
+        }
+        public DataTable DSPCNTime_TraTien(string tu, string den)
+        {
+            return hoaDonNhap.DSPCNTime_TraTien(tu, den);
+        }
+        public DataTable DSPCN_TraTien()
+        {
+            return hoaDonNhap.DSPCN_TraTien();
+        }
+
     }
 }

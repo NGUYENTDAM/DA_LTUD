@@ -16,6 +16,10 @@ namespace NTD.BUS
         {
             return ctm.GetAllData();
         }
+        public DataTable TheoChungTuTime(string tu, string den)
+        {
+            return ctm.TheoChungTuTime(tu, den);
+        }
         public DataTable ChiTietPhieuTheoChungTu()
         {
             return ctm.ChiTietPhieuTheoChungTu();

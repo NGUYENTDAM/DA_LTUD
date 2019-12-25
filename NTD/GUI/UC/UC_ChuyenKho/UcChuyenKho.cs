@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NTD.BUS;
 using NTD.DAO;
 using DevExpress.XtraEditors.Controls;
+using NTD.DTO;
 
 namespace NTD.GUI.UC
 {
@@ -34,12 +35,12 @@ namespace NTD.GUI.UC
             var dataTable2 = khohang.GetAllData();
 
             cbKhoXuat.Properties.DataSource = dataTable2;
-            cbKhoXuat.Properties.DisplayMember = "Tên";
-            cbKhoXuat.Properties.ValueMember = "Mã Mã";
+            cbKhoXuat.Properties.DisplayMember = "TenKho";
+            cbKhoXuat.Properties.ValueMember = "MaKho";
 
             cbKhoNhan.Properties.DataSource = dataTable2;
-            cbKhoNhan.Properties.DisplayMember = "Tên";
-            cbKhoNhan.Properties.ValueMember = "Mã Mã";
+            cbKhoNhan.Properties.DisplayMember = "TenKho";
+            cbKhoNhan.Properties.ValueMember = "MaKho";
 
             var dataTable1 = tnd.GetAllDataNV();
             cbNguoiChuyen.Properties.DataSource = dataTable1;
@@ -124,6 +125,56 @@ namespace NTD.GUI.UC
                     gridView1.SetRowCellValue(e.RowHandle, "DonVi", dt.Rows[0]["DonVi"]);
                     gridView1.SetRowCellValue(e.RowHandle, "DonGia", dt.Rows[0]["GiaMua"]);
                 }
+            }
+        }
+        ChuyenKho_BUS bus_ck = new ChuyenKho_BUS();
+        private void groupControl2_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            if (e.Button.Properties.Caption == "Tạo Mới")
+            {
+                gridView1.OptionsSelection.MultiSelect = true;
+                gridView1.SelectAll();
+                gridView1.DeleteSelectedRows();
+
+            }
+            if (e.Button.Properties.Caption == "Đóng")
+            {
+                System.Windows.Forms.Form tmp = this.FindForm();
+                tmp.Close();
+                tmp.Dispose();
+            }
+            if (e.Button.Properties.Caption == "Nạp Lại")
+            {
+                gridView1.OptionsSelection.MultiSelect = true;
+                gridView1.SelectAll();
+                gridView1.DeleteSelectedRows();
+            }
+
+            if (e.Button.Properties.Caption == "Lưu & Thêm")
+            {
+                string MaSP="";
+                string khoNhan = cbKhoNhan.EditValue.ToString();
+
+                for (int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    MaSP = gridView1.GetRowCellValue(i, "MaSP").ToString();
+                }
+                ChuyenKho ck = new ChuyenKho()
+                {
+                    Phieu = txtPhieuCK.Text,
+                    Ngay = DateTime.Parse(cbNgay.Text),
+                    KhoXuat=cbKhoXuat.Text,
+                    KhoNhan=cbKhoNhan.Text,
+                    NguoiGui=cbNguoiChuyen.Text,
+                    NguoiNhan=cbNguoiNhan.Text,
+                    GhiChu=txtGhiChu.Text
+                };
+                bus_ck.ThemDV(ck);
+                bus_ck.Update(MaSP, khoNhan);
+
+                gridView1.OptionsSelection.MultiSelect = true;
+                gridView1.SelectAll();
+                gridView1.DeleteSelectedRows();
             }
         }
     }

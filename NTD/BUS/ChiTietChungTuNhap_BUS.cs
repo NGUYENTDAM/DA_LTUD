@@ -31,5 +31,9 @@ namespace NTD.BUS
         {
             return ctn.DeleteById(ma);
         }
+        public DataTable TheoHangHoaTime(string tu, string den)
+        {
+            return ctn.TheoHangHoaTime(tu, den);
+        }
     }
 }

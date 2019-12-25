@@ -36,7 +36,7 @@ namespace NTD.GUI
         }
         private void LoadPhieuTraNgay()
         {
-            Uc_ThuTien_DSPCN pbh = new Uc_ThuTien_DSPCN();
+            Uc_ThuTien_DSPTN pbh = new Uc_ThuTien_DSPTN();
             pbh.Dock = DockStyle.Fill;
             ucControl.Controls.Clear();
             ucControl.Controls.Add(pbh);
@@ -49,7 +49,7 @@ namespace NTD.GUI
 
         private void frmThuTien_Load(object sender, EventArgs e)
         {
-            LoadPhieuChuyenKho();
+            LoadPhieuCongNo();
         }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

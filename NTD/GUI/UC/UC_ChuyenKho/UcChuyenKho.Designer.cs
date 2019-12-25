@@ -54,8 +54,6 @@
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.cbNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtPhieuCK = new DevExpress.XtraEditors.TextEdit();
-            this.cbKhoXuat = new DevExpress.XtraEditors.LookUpEdit();
-            this.cbKhoNhan = new DevExpress.XtraEditors.LookUpEdit();
             this.cbNguoiChuyen = new DevExpress.XtraEditors.LookUpEdit();
             this.cbNguoiNhan = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -74,6 +72,8 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbKhoXuat = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbKhoNhan = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -95,8 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhieuCK.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKhoXuat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiChuyen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiNhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -115,6 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKhoXuat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -157,6 +157,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(875, 422);
             this.groupControl2.TabIndex = 0;
+            this.groupControl2.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl2_CustomButtonClick);
             // 
             // layoutControl2
             // 
@@ -167,10 +168,10 @@
             this.layoutControl2.Controls.Add(this.textEdit4);
             this.layoutControl2.Controls.Add(this.cbNgay);
             this.layoutControl2.Controls.Add(this.txtPhieuCK);
-            this.layoutControl2.Controls.Add(this.cbKhoXuat);
-            this.layoutControl2.Controls.Add(this.cbKhoNhan);
             this.layoutControl2.Controls.Add(this.cbNguoiChuyen);
             this.layoutControl2.Controls.Add(this.cbNguoiNhan);
+            this.layoutControl2.Controls.Add(this.cbKhoXuat);
+            this.layoutControl2.Controls.Add(this.cbKhoNhan);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(2, 23);
             this.layoutControl2.Name = "layoutControl2";
@@ -327,30 +328,6 @@
             this.txtPhieuCK.Size = new System.Drawing.Size(50, 20);
             this.txtPhieuCK.StyleController = this.layoutControl2;
             this.txtPhieuCK.TabIndex = 11;
-            // 
-            // cbKhoXuat
-            // 
-            this.cbKhoXuat.Location = new System.Drawing.Point(102, 12);
-            this.cbKhoXuat.Name = "cbKhoXuat";
-            this.cbKhoXuat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbKhoXuat.Properties.NullText = "";
-            this.cbKhoXuat.Properties.PopupSizeable = false;
-            this.cbKhoXuat.Size = new System.Drawing.Size(451, 20);
-            this.cbKhoXuat.StyleController = this.layoutControl2;
-            this.cbKhoXuat.TabIndex = 7;
-            // 
-            // cbKhoNhan
-            // 
-            this.cbKhoNhan.Location = new System.Drawing.Point(102, 36);
-            this.cbKhoNhan.Name = "cbKhoNhan";
-            this.cbKhoNhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbKhoNhan.Properties.NullText = "";
-            this.cbKhoNhan.Properties.PopupSizeable = false;
-            this.cbKhoNhan.Size = new System.Drawing.Size(451, 20);
-            this.cbKhoNhan.StyleController = this.layoutControl2;
-            this.cbKhoNhan.TabIndex = 8;
             // 
             // cbNguoiChuyen
             // 
@@ -532,6 +509,30 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // cbKhoXuat
+            // 
+            this.cbKhoXuat.Location = new System.Drawing.Point(102, 12);
+            this.cbKhoXuat.Name = "cbKhoXuat";
+            this.cbKhoXuat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbKhoXuat.Properties.NullText = "";
+            this.cbKhoXuat.Properties.PopupSizeable = false;
+            this.cbKhoXuat.Size = new System.Drawing.Size(451, 20);
+            this.cbKhoXuat.StyleController = this.layoutControl2;
+            this.cbKhoXuat.TabIndex = 7;
+            // 
+            // cbKhoNhan
+            // 
+            this.cbKhoNhan.Location = new System.Drawing.Point(102, 36);
+            this.cbKhoNhan.Name = "cbKhoNhan";
+            this.cbKhoNhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbKhoNhan.Properties.NullText = "";
+            this.cbKhoNhan.Properties.PopupSizeable = false;
+            this.cbKhoNhan.Size = new System.Drawing.Size(451, 20);
+            this.cbKhoNhan.StyleController = this.layoutControl2;
+            this.cbKhoNhan.TabIndex = 8;
+            // 
             // UcChuyenKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,8 +561,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhieuCK.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKhoXuat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiChuyen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNguoiNhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -580,6 +579,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKhoXuat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbKhoNhan.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -622,9 +623,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEditDonVi;
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuong;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit1;
-        private DevExpress.XtraEditors.LookUpEdit cbKhoXuat;
-        private DevExpress.XtraEditors.LookUpEdit cbKhoNhan;
         private DevExpress.XtraEditors.LookUpEdit cbNguoiChuyen;
         private DevExpress.XtraEditors.LookUpEdit cbNguoiNhan;
+        private DevExpress.XtraEditors.LookUpEdit cbKhoXuat;
+        private DevExpress.XtraEditors.LookUpEdit cbKhoNhan;
     }
 }

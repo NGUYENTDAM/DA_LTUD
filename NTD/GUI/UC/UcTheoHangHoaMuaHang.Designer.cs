@@ -30,12 +30,11 @@
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dtDen = new DevExpress.XtraEditors.DateEdit();
+            this.dtTu = new DevExpress.XtraEditors.DateEdit();
             this.ucChungNang = new NTD.GUI.UC.UcChucNangBan();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gcTheoHangHoa = new DevExpress.XtraGrid.GridControl();
             this.gvTheoHangHoa = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,10 +55,10 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTheoHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTheoHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -82,12 +81,11 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.dateEdit2);
-            this.groupControl2.Controls.Add(this.dateEdit1);
+            this.groupControl2.Controls.Add(this.dtDen);
+            this.groupControl2.Controls.Add(this.dtTu);
             this.groupControl2.Controls.Add(this.ucChungNang);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label1);
-            this.groupControl2.Controls.Add(this.comboBox1);
             this.groupControl2.Location = new System.Drawing.Point(22, 22);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(1058, 72);
@@ -95,33 +93,33 @@
             this.groupControl2.Text = "Bảng Kê Chi Tiết";
             this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
-            // dateEdit2
+            // dtDen
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(326, 33);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtDen.EditValue = null;
+            this.dtDen.Location = new System.Drawing.Point(215, 40);
+            this.dtDen.Name = "dtDen";
+            this.dtDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtDen.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(119, 20);
-            this.dateEdit2.TabIndex = 9;
+            this.dtDen.Size = new System.Drawing.Size(119, 20);
+            this.dtDen.TabIndex = 9;
             // 
-            // dateEdit1
+            // dtTu
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(168, 32);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtTu.EditValue = null;
+            this.dtTu.Location = new System.Drawing.Point(57, 39);
+            this.dtTu.Name = "dtTu";
+            this.dtTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtTu.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(119, 20);
-            this.dateEdit1.TabIndex = 8;
+            this.dtTu.Size = new System.Drawing.Size(119, 20);
+            this.dtTu.TabIndex = 8;
             // 
             // ucChungNang
             // 
-            this.ucChungNang.Location = new System.Drawing.Point(460, 23);
+            this.ucChungNang.Location = new System.Drawing.Point(349, 30);
             this.ucChungNang.Name = "ucChungNang";
             this.ucChungNang.Size = new System.Drawing.Size(589, 40);
             this.ucChungNang.TabIndex = 5;
@@ -129,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(293, 38);
+            this.label2.Location = new System.Drawing.Point(182, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -138,19 +136,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 35);
+            this.label1.Location = new System.Drawing.Point(30, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Từ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // gcTheoHangHoa
             // 
@@ -255,6 +245,7 @@
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Đơn Giá";
+            this.gridColumn10.FieldName = "DonGia";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
@@ -320,10 +311,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTheoHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTheoHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -342,14 +333,13 @@
         private UcChucNangBan ucChungNang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraGrid.GridControl gcTheoHangHoa;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTheoHangHoa;
         private DevExpress.XtraLayout.LayoutControlGroup Root1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dtDen;
+        private DevExpress.XtraEditors.DateEdit dtTu;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

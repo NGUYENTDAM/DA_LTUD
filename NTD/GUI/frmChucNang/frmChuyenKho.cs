@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using NTD.GUI.UC;
+using NTD.GUI.UC.UC_ChuyenKho;
 
 namespace NTD.GUI
 {
@@ -33,7 +34,7 @@ namespace NTD.GUI
         }
         private void LoadTheoChungTu()
         {
-            UcTheoChungTuMuaHang pbh = new UcTheoChungTuMuaHang();
+            UcChuyenKhoTheoChungTu pbh = new UcChuyenKhoTheoChungTu();
             pbh.Dock = DockStyle.Fill;
             ucControl.Controls.Clear();
             ucControl.Controls.Add(pbh);
@@ -60,9 +61,27 @@ namespace NTD.GUI
             LoadTheoChungTu();
         }
 
-        private void nbTheoHangHoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        //private void nbTheoHangHoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        //{
+        //    LoadTheoHangHoa();
+        //}
+
+        private void nbHangHoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoadTheoHangHoa();
+            frmThemHangHoa hh = new frmThemHangHoa();
+            hh.ShowDialog();
+        }
+
+        private void nbKhoHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThemKhoHang kh = new frmThemKhoHang();
+            kh.ShowDialog();
+        }
+
+        private void nbNhanVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThemNhanVien nv = new frmThemNhanVien();
+            nv.ShowDialog();
         }
     }
 }

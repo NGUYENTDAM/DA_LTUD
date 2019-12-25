@@ -13,7 +13,7 @@ namespace NTD.DAO
         public db db = new db();
         public DataTable GetAllData()
         {
-            string sql = "select MaKho as [Mã], TenKho as [Tên],LienHe as [Liên Hệ],DienThoai as [Điện Thoại],GhiChu as[Ghi Chú],ConQuanLy as [Còn Quản Lý] from KhoHang";
+            string sql = "select MaKho, TenKho,LienHe as [Liên Hệ],DienThoai as [Điện Thoại],GhiChu as[Ghi Chú],ConQuanLy as [Còn Quản Lý] from KhoHang";
             var rs = db.GetData(sql);
 
             return rs;

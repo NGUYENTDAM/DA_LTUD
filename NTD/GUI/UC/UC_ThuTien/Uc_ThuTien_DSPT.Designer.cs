@@ -30,39 +30,44 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Uc_ThuTien_DSPT));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDSPT = new DevExpress.XtraGrid.GridControl();
+            this.gvDSPT = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dtDen = new DevExpress.XtraEditors.DateEdit();
+            this.dtTu = new DevExpress.XtraEditors.DateEdit();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXuat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXem = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDSPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.gcDSPT);
             this.layoutControl1.Controls.Add(this.groupControl2);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -72,79 +77,163 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gridControl1
+            // gcDSPT
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 83);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(906, 319);
-            this.gridControl1.TabIndex = 7;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcDSPT.Location = new System.Drawing.Point(12, 83);
+            this.gcDSPT.MainView = this.gvDSPT;
+            this.gcDSPT.Name = "gcDSPT";
+            this.gcDSPT.Size = new System.Drawing.Size(906, 319);
+            this.gcDSPT.TabIndex = 7;
+            this.gcDSPT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDSPT});
             // 
-            // gridView1
+            // gvDSPT
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gvDSPT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gvDSPT.GridControl = this.gcDSPT;
+            this.gvDSPT.GroupCount = 1;
+            this.gvDSPT.Name = "gvDSPT";
+            this.gvDSPT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Phiếu";
+            this.gridColumn1.FieldName = "Phieu";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Ngày";
+            this.gridColumn2.FieldName = "Ngay";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Chứng Từ";
+            this.gridColumn3.FieldName = "MaCT";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Khách Hàng";
+            this.gridColumn4.FieldName = "KhachHang";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Số Tiền";
+            this.gridColumn5.FieldName = "SoTien";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Ghi Chú";
+            this.gridColumn6.FieldName = "GhiChu";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.dateEdit2);
-            this.groupControl2.Controls.Add(this.dateEdit1);
-            this.groupControl2.Controls.Add(this.simpleButton4);
-            this.groupControl2.Controls.Add(this.simpleButton3);
-            this.groupControl2.Controls.Add(this.simpleButton2);
-            this.groupControl2.Controls.Add(this.simpleButton1);
+            this.groupControl2.Controls.Add(this.dtDen);
+            this.groupControl2.Controls.Add(this.dtTu);
+            this.groupControl2.Controls.Add(this.btnDong);
+            this.groupControl2.Controls.Add(this.btnXuat);
+            this.groupControl2.Controls.Add(this.btnXoa);
+            this.groupControl2.Controls.Add(this.btnXem);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label1);
-            this.groupControl2.Controls.Add(this.comboBox1);
             this.groupControl2.Location = new System.Drawing.Point(12, 12);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(906, 67);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "Bảng kê phiếu thu tiền";
             // 
-            // simpleButton4
+            // dtDen
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(759, 32);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 11;
-            this.simpleButton4.Text = "Đóng";
+            this.dtDen.EditValue = null;
+            this.dtDen.Location = new System.Drawing.Point(205, 31);
+            this.dtDen.Name = "dtDen";
+            this.dtDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDen.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDen.Size = new System.Drawing.Size(119, 20);
+            this.dtDen.TabIndex = 13;
             // 
-            // simpleButton3
+            // dtTu
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(664, 32);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 10;
-            this.simpleButton3.Text = "Xuất";
+            this.dtTu.EditValue = null;
+            this.dtTu.Location = new System.Drawing.Point(46, 31);
+            this.dtTu.Name = "dtTu";
+            this.dtTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtTu.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtTu.Size = new System.Drawing.Size(119, 20);
+            this.dtTu.TabIndex = 12;
             // 
-            // simpleButton2
+            // btnDong
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(569, 32);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Xóa";
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.Location = new System.Drawing.Point(638, 28);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.TabIndex = 11;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
-            // simpleButton1
+            // btnXuat
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(474, 32);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Xem";
+            this.btnXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.ImageOptions.Image")));
+            this.btnXuat.Location = new System.Drawing.Point(543, 28);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(75, 23);
+            this.btnXuat.TabIndex = 10;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(448, 28);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnXem
+            // 
+            this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
+            this.btnXem.Location = new System.Drawing.Point(353, 28);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(75, 23);
+            this.btnXem.TabIndex = 8;
+            this.btnXem.Text = "Xem";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(293, 38);
+            this.label2.Location = new System.Drawing.Point(171, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -153,19 +242,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 35);
+            this.label1.Location = new System.Drawing.Point(20, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Từ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // Root
             // 
@@ -192,36 +273,12 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.gridControl1;
+            this.layoutControlItem2.Control = this.gcDSPT;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 71);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(910, 323);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(167, 33);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(119, 20);
-            this.dateEdit1.TabIndex = 12;
-            // 
-            // dateEdit2
-            // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(326, 34);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(119, 20);
-            this.dateEdit2.TabIndex = 13;
             // 
             // Uc_ThuTien_DSPT
             // 
@@ -230,20 +287,21 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "Uc_ThuTien_DSPT";
             this.Size = new System.Drawing.Size(930, 414);
+            this.Load += new System.EventHandler(this.Uc_ThuTien_DSPT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDSPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDSPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,17 +312,22 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcDSPT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDSPT;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
+        private DevExpress.XtraEditors.SimpleButton btnXuat;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnXem;
+        private DevExpress.XtraEditors.DateEdit dtDen;
+        private DevExpress.XtraEditors.DateEdit dtTu;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }
