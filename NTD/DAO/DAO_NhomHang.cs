@@ -29,7 +29,7 @@ namespace NTD.DAO
         public int Update(NhomHang nh)
         {
             string sql =
- string.Format("Update LoaiSanPham Set TenLoaiHang='{0}' where MaLoaiHang='{1}'",nh.Ten,nh.Ma);
+ string.Format("Update LoaiSanPham Set TenLoaiHang=N'{0}' where MaLoaiHang='{1}'",nh.Ten,nh.Ma);
             var rs = db.ExecuteSQL(sql);
 
             return rs;

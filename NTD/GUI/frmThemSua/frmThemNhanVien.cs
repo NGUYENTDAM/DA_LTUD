@@ -85,17 +85,17 @@ namespace NTD.GUI
         db db = new db();
         private void frmThemNhanVien_Load(object sender, EventArgs e)
         {
-            int stt = db.GetSoLuong("NhanVien") + 1;
-            string maMacDinh;
-            if (stt < 10)
-            {
-                maMacDinh = "NV00" + stt;
-            }
-            else
-            {
-                maMacDinh = "NV0" + stt;
-            }
-            txtMa.Text = maMacDinh;
+            //int stt = db.GetSoLuong("NhanVien") + 1;
+            //string maMacDinh;
+            //if (stt < 10)
+            //{
+            //    maMacDinh = "NV00" + stt;
+            //}
+            //else
+            //{
+            //    maMacDinh = "NV0" + stt;
+            //}
+            //txtMa.Text = maMacDinh;
         }
     }
 }
