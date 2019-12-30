@@ -42,7 +42,15 @@ namespace NTD.GUI
 
                 var roleId = rs.RoleId;
                 GlobalVar.userName = rs.userName;
+                GlobalVar.maVN = rs.maNV;
                 Form1 form1 = new Form1(roleId);
+
+                if (checkBox1.Checked)
+                {
+                    Properties.Settings.Default.userName = textEdit1.Text;
+                    Properties.Settings.Default.passUser = textEdit2.Text;
+                    Properties.Settings.Default.Save();
+                }
 
                 textEdit1.ResetText();
                 textEdit2.ResetText();
@@ -67,9 +75,11 @@ namespace NTD.GUI
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            textEdit1.EditValue = "admin";
-            textEdit2.EditValue = "123";
-            checkBox1.Checked = true;
+            if (Properties.Settings.Default.userName != string.Empty)
+            {
+                textEdit1.Text = Properties.Settings.Default.userName;
+                textEdit2.Text = Properties.Settings.Default.passUser;
+            }
         }
 
         private void frmDangNhap_KeyDown(object sender, KeyEventArgs e)

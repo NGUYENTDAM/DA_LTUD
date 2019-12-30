@@ -43,5 +43,13 @@ namespace NTD.DAO
 
             return rs;
         }
+
+        public DataTable GetAllDataTheoMaNV(string manv)
+        {
+            string sql = "select nv.MaNV as [Mã],nv.HoTen as [Họ Tên],nv.DiaChi as [Địa Chỉ],nv.DienThoai as [Điện Thoại] from NhanVien nv where MaNV = '"+ manv +"'";
+            var rs = db.GetData(sql);
+
+            return rs;
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace NTD
     {
         public static Dictionary<int, RoleForm> dictRoleForm = new Dictionary<int, RoleForm>();
         public static string userName;
+        public static string maVN;
     }
 }

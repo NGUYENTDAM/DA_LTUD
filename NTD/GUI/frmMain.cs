@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using NTD.BUS;
 using NTD.GUI;
 using NTD.GUI.frmChucNang;
+using NTD.GUI.frmHeThong;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,8 +36,16 @@ namespace NTD
                 btnTonKho.Visibility = BarItemVisibility.Never;
                 btnNhapSoDu.Visibility = BarItemVisibility.Never;
                 btnChungTu.Visibility = BarItemVisibility.Never;
-                //barButtonItem8.Visibility = BarItemVisibility.Never;
+                barButtonItem8.Visibility = BarItemVisibility.Never;
                 btnKhoHang.Visibility = BarItemVisibility.Never;
+                btnMuaHang.Visibility = BarItemVisibility.Never;
+                btnTraTien.Visibility = BarItemVisibility.Never;
+                btnThuTien.Visibility = BarItemVisibility.Never;
+                btnBaoCaoBH.Visibility = BarItemVisibility.Never;
+                btnBaoCaoKH.Visibility = BarItemVisibility.Never;
+                ribbonPageGroup9.Visible = false;
+                ribbonPageGroup8.Visible = false;
+                ribbonPageGroup10.Visible = false;
             }
 
             if (RoleId == 2)
@@ -193,7 +202,8 @@ namespace NTD
 
         private void btnTT_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MessageBox.Show("NTD","Thông Tin",MessageBoxButtons.OK);
+            frmThongTin frmThongTin = new frmThongTin();
+            frmThongTin.ShowDialog();
         }
         private bool ExistsForm(XtraForm form)
         {

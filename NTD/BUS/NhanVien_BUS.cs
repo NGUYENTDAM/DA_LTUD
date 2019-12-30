@@ -32,5 +32,10 @@ namespace NTD.BUS
         {
             return nva.Update(nv);
         }
+
+        public DataTable GetAllDataTheoMaNV(string manv)
+        {
+            return nva.GetAllDataTheoMaNV(manv);
+        }
     }
 }

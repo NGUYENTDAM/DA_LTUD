@@ -21,7 +21,7 @@ namespace NTD.DAO
 
         public UserInfo Login(string userName, string password)
         {
-            string sql = string.Format("select Id, RoleId, UserName from [User] where UserName = '{0}' and Password = '{1}'", userName, password);
+            string sql = string.Format("select Id, RoleId, UserName, MaNV from [User] where UserName = '{0}' and Password = '{1}'", userName, password);
 
             var tb = db.GetData(sql);
 
@@ -31,7 +31,8 @@ namespace NTD.DAO
                 {
                     Id = int.Parse(tb.Rows[0]["Id"].ToString()),
                     RoleId = int.Parse(tb.Rows[0]["RoleId"].ToString()),
-                    userName = tb.Rows[0]["UserName"].ToString()
+                    userName = tb.Rows[0]["UserName"].ToString(),
+                    maNV = tb.Rows[0]["MaNV"].ToString()
                 };
             }
             
