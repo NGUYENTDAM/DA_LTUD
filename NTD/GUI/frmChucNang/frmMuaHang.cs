@@ -25,13 +25,11 @@ namespace NTD.GUI
         }
         private void LoadPhieuNhapHang()
         {
-
             PhieuNhapHang pbh = new PhieuNhapHang();
             pbh.Dock = DockStyle.Fill;
             ucBanHang1.Controls.Clear();
             ucBanHang1.Controls.Add(pbh);
             ucBanHang1.Dock = DockStyle.Fill;
-
         }
         private void LoadTheoChungTu()
         {

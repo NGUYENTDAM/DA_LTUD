@@ -86,10 +86,9 @@ namespace NTD.GUI.UC
 
         private void TaoMoi(object sender, EventArgs e)
         {
-            ////////
-            PhieuNhapHang n = new PhieuNhapHang();
-            
-
+            frmMuaHang muaHang = new frmMuaHang();
+            muaHang.ShowDialog();
+            muaHang.MdiParent = this.ParentForm.ParentForm.ParentForm;
         }
 
         private void Xem(object sender, EventArgs e)

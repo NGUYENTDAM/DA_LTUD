@@ -59,9 +59,9 @@ namespace NTD.GUI.UC
 
         private void TaoMoi(object sender, EventArgs e)
         {
-            ////////
-            PhieuNhapHang n = new PhieuNhapHang();
-
+            frmBanHang banHang = new frmBanHang();
+            banHang.ShowDialog();
+            banHang.MdiParent = this.ParentForm.ParentForm.ParentForm;
 
         }
         private void LoadTheoTime()
